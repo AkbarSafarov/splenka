@@ -1,0 +1,428 @@
+$ct-breakpoint-lg: 991px;
+$ct-breakpoint-md: 767px;
+
+.contacts-page {
+    margin-top: 40px;
+    margin-bottom: 80px;
+
+    @media all and (max-width: $ct-breakpoint-md) {
+        margin-top: 24px;
+        margin-bottom: 30px;
+    }
+}
+
+// ─── Contact Card ─────────────────────────────────────────────────────────────
+
+.contact-card {
+    background: var(--brand-white);
+    border-radius: 32px 32px 32px 0;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    @media all and (max-width: $ct-breakpoint-md) {
+        padding: 24px;
+    }
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 12px;
+        margin-bottom: 32px;
+    }
+
+    &__title {
+        font-family: var(--third-family);
+        font-weight: 400;
+        font-size: 32px;
+        line-height: 113%;
+        letter-spacing: -0.03em;
+        color: var(--brand-black);
+        margin: 0;
+
+        @media all and (max-width: $ct-breakpoint-md) {
+            font-size: 20px;
+        }
+    }
+
+    &__icon {
+        flex-shrink: 0;
+        background: var(--t-gold-10);
+        border-radius: 32px;
+        width: 47px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__desc {
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 150%;
+        color: var(--t-black-80);
+        margin-bottom: 32px;
+
+        a {
+            color: var(--brand-black);
+            text-decoration: underline;
+            text-decoration-skip-ink: none;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+
+    &__body {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__label {
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 143%;
+        color: var(--t-black-60);
+        margin-bottom: 8px;
+    }
+
+    &__phones {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        margin-bottom: 32px;
+    }
+
+    a[href^="tel:"] {
+        color: var(--t-black-60);
+    }
+
+    &__phone {
+        display: flex;
+        align-items: baseline;
+        gap: 8px;
+        text-decoration: none;
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 28px;
+        line-height: 129%;
+        color: var(--t-black-60);
+
+        span {
+            color: var(--brand-black);
+        }
+    }
+
+    &__address-text {
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 28px;
+        line-height: 129%;
+        color: var(--brand-black);
+        margin-bottom: 32px;
+
+        @media all and (max-width: $ct-breakpoint-md) {
+            font-size: 18px;
+            margin-bottom: 16px;
+        }
+    }
+
+    &__email {
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 28px;
+        line-height: 129%;
+        color: var(--brand-black);
+        text-decoration: none;
+        word-break: break-all;
+        margin-bottom: 32px;
+
+        &:hover {
+            text-decoration: underline;
+        }
+
+        @media all and (max-width: $ct-breakpoint-md) {
+            font-size: 18px;
+            margin-bottom: 16px;
+        }
+    }
+
+    &__schedule {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 32px;
+
+        @media all and (max-width: $ct-breakpoint-md) {
+            margin-bottom: 16px;
+        }
+    }
+
+    &__schedule-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 8px;
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 150%;
+        color: var(--t-black-60);
+        border-bottom: 1px solid var(--t-black-10);
+        padding: 8px 0;
+
+        &-label {
+            color: var(--t-black-60);
+        }
+
+        &-value {
+            text-align: right;
+            color: var(--brand-black);
+        }
+    }
+
+    &__collab-label {
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 143%;
+        color: var(--t-black-60);
+        margin-bottom: 8px;
+    }
+
+    &__action {
+        margin-top: auto;
+        padding-top: 24px;
+
+        @media all and (max-width: $ct-breakpoint-md) {
+            padding-top: 16px;
+        }
+    }
+}
+
+// ─── Section (Map + Form) ─────────────────────────────────────────────────────
+
+.map-section {
+    position: relative;
+
+    @media all and (max-width: $ct-breakpoint-md) {
+
+    }
+}
+
+.contacts-section {
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 48px;
+
+        @media all and (max-width: $ct-breakpoint-md) {
+            margin-bottom: 20px;
+        }
+    }
+
+    &__title {
+        font-family: var(--third-family);
+        font-weight: 400;
+        font-size: 40px;
+        line-height: 110%;
+        letter-spacing: -0.02em;
+        color: var(--brand-black);
+        margin: 0;
+
+        @media all and (max-width: $ct-breakpoint-md) {
+            font-size: 24px;
+        }
+    }
+
+    &__label {
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 100%;
+        letter-spacing: 0.11em;
+        text-transform: uppercase;
+        text-align: center;
+        color: var(--t-black-40);
+        white-space: nowrap;
+    }
+}
+
+// ─── Map ──────────────────────────────────────────────────────────────────────
+
+.contacts-map {
+    border-radius: 32px 32px 32px 0;
+    overflow: hidden;
+    height: 640px;
+
+    @media all and (max-width: $ct-breakpoint-md) {
+        height: 280px;
+    }
+
+    iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+        display: block;
+    }
+}
+
+// ─── Feedback Form ────────────────────────────────────────────────────────────
+.contacts-section-form {
+    padding: 80px 0 32px;
+
+    @media all and (max-width: $ct-breakpoint-md) {
+        padding: 30px 0 16px;
+    }
+}
+.ct-form {
+    border-radius: 32px 32px 32px 0;
+    padding: 32px 32px 40px;
+    background: var(--brand-white);
+
+    @media all and (max-width: $ct-breakpoint-md) {
+        padding: 24px;
+    }
+
+    .order__item-row {
+        width: 100%;
+    }
+
+    &__captcha-row {
+        display: flex;
+        align-items: flex-end;
+        gap: 24px;
+
+        .order__item-row {
+            flex: 0 0 370px;
+
+            @media all and (max-width: $ct-breakpoint-md) {
+                flex: 1;
+            }
+        }
+    }
+
+    &__captcha-img {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        padding-bottom: 2px;
+
+        img {
+            max-height: 48px;
+        }
+    }
+}
+
+// ─── Requisites ───────────────────────────────────────────────────────────────
+
+.contacts-requisites {
+    margin-top: 24px;
+    background: var(--brand-white);
+    border-radius: 32px 32px 32px 0;
+    padding: 32px;
+
+    @media all and (max-width: $ct-breakpoint-md) {
+        margin-top: 20px;
+        padding: 16px;
+    }
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 32px;
+
+        @media all and (max-width: $ct-breakpoint-md) {
+            margin-bottom: 20px;
+        }
+    }
+
+    &__title {
+        font-family: var(--third-family);
+        font-weight: 400;
+        font-size: 32px;
+        line-height: 113%;
+        letter-spacing: -0.03em;
+        color: var(--brand-black);
+        margin: 0;
+
+        @media all and (max-width: $ct-breakpoint-md) {
+            font-size: 24px;
+        }
+    }
+
+    &__icon {
+        flex-shrink: 0;
+        background: var(--t-gold-10);
+        border-radius: 32px;
+        width: 47px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__company {
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 28px;
+        line-height: 129%;
+        color: var(--t-black-80);
+    }
+
+    &__address-label {
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 150%;
+        color: var(--t-black-60);
+        margin-bottom: 8px;
+    }
+
+    &__address {
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 140%;
+        color: var(--brand-black);
+    }
+
+    &__row {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 16px;
+        padding: 12px 0;
+        border-bottom: 1px solid var(--t-black-10);
+        font-family: var(--font-family);
+
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+
+    &__key {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 150%;
+        color: var(--t-black-60);
+    }
+
+    &__value {
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 140%;
+        text-align: right;
+        color: var(--brand-black);
+    }
+}

@@ -1,0 +1,170 @@
+// ── Forms ───────────────────────────────────────────────────────────────────
+// Bootstrap handles: .form-control (border, padding, radius, focus, disabled),
+// .form-check / .form-switch (checkbox, radio, toggle),
+// .is-valid / .is-invalid (valid/error states + feedback text).
+// This file adds: .is-warning, pill variant, qty-stepper, minor overrides.
+
+// ── Label ───────────────────────────────────────────────────────────────────
+.form-label {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    color: var(--t-black-60);
+    margin-bottom: 6px;
+}
+
+// ── Input overrides ─────────────────────────────────────────────────────────
+// Bootstrap variables set: border-width:2px, border-radius:24px,
+//   padding-y:12px, padding-x:24px, border-color:t-black-40.
+// CSS below: height, asymmetric padding (right=16px), hover state.
+
+.form-control,
+.form-select {
+    height: 48px;
+    padding-right: 1rem; // 16px right / 24px left (asymmetric per design)
+    background-color: var(--brand-white);
+
+    &:hover:not(:focus):not(:disabled):not([readonly]) {
+        border-color: rgba(26, 51, 45, 0.6);
+    }
+}
+
+.form-control-sm,
+.form-select-sm {
+    height: 36px;
+    padding-right: 0.75rem;
+}
+
+.form-control-lg,
+.form-select-lg {
+    height: 56px;
+    padding-right: 1.25rem;
+}
+
+// Textarea — no fixed height
+textarea.form-control {
+    height: auto;
+    min-height: 100px;
+    padding: 0.75rem 1rem 0.75rem 1.5rem;
+    resize: vertical;
+}
+
+// Select chevron padding
+.form-select {
+    padding-right: 2.5rem;
+}
+
+// Pill variant — alias since border-radius is already 24px,
+// use for explicit pill on dark bg
+.form-control-pill { border-radius: 100px !important; }
+.form-select-pill  { border-radius: 100px !important; }
+
+// ── Warning state (not in Bootstrap) ────────────────────────────────────────
+.form-control.is-warning,
+.form-select.is-warning {
+    border-color: var(--state-warning);
+    background-image: none;
+
+    &:focus {
+        border-color: var(--state-warning);
+        box-shadow: 0 0 0 0.2rem rgba(229, 134, 0, 0.2);
+    }
+}
+
+.warning-feedback {
+    display: block;
+    width: 100%;
+    margin-top: 0.25rem;
+    font-size: 0.8em;
+    color: var(--state-warning);
+}
+
+// ── Confirmed / valid — use gold feedback text ───────────────────────────────
+.valid-feedback { color: var(--brand-gold); }
+
+// ── Invalid / error feedback ─────────────────────────────────────────────────
+.invalid-feedback { color: var(--state-error); }
+
+// ── Form check (checkbox & radio) ───────────────────────────────────────────
+.form-check-input {
+    border-color: rgba(26, 51, 45, 0.3);
+    cursor: pointer;
+    transition: border-color 0.15s ease, background-color 0.15s ease;
+
+    &:hover:not(:disabled):not(:checked) {
+        border-color: var(--brand-gold);
+    }
+
+    &.is-invalid { border-color: var(--state-error); }
+}
+
+// ── Form switch (toggle) — checked state uses gold ──────────────────────────
+.form-switch .form-check-input:checked {
+    background-color: var(--brand-gold);
+    border-color: var(--brand-gold);
+}
+
+// ── Qty stepper ─────────────────────────────────────────────────────────────
+// Usage: <div class="qty-stepper">
+//          <button class="qty-stepper__btn" data-qty="dec">–</button>
+//          <input  class="qty-stepper__input form-control" type="number" value="2">
+//          <button class="qty-stepper__btn" data-qty="inc">+</button>
+//        </div>
+
+.qty-stepper {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid rgba(26, 51, 45, 0.2);
+    border-radius: 8px;
+    overflow: hidden;
+    height: 40px;
+
+    &--sm { height: 32px; border-radius: 6px; }
+    &--lg { height: 48px; border-radius: 10px; }
+}
+
+.qty-stepper__btn {
+    flex-shrink: 0;
+    width: 36px;
+    height: 100%;
+    background: none;
+    border: none;
+    color: var(--brand-black);
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.15s ease, color 0.15s ease;
+
+    &:hover:not(:disabled) { background: var(--brand-ice); }
+    &:disabled { color: var(--t-black-30); cursor: default; }
+
+    .qty-stepper--sm & { width: 28px; font-size: 14px; }
+    .qty-stepper--lg & { width: 44px; font-size: 20px; }
+}
+
+.qty-stepper__input {
+    width: 44px;
+    height: 100%;
+    text-align: center;
+    border: none;
+    border-left: 1px solid rgba(26, 51, 45, 0.2);
+    border-right: 1px solid rgba(26, 51, 45, 0.2);
+    border-radius: 0 !important;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--brand-black);
+    background: none;
+    padding: 0 4px;
+    box-shadow: none !important;
+
+    /* hide browser number arrows */
+    -moz-appearance: textfield;
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
+
+    .qty-stepper--sm & { width: 36px; font-size: 12px; }
+    .qty-stepper--lg & { width: 52px; font-size: 16px; }
+}

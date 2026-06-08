@@ -1,0 +1,280 @@
+
+// ── Catalog mega-menu ─────────────────────────────────────────────────────────
+
+.header {
+    position: relative;
+}
+
+.catalog-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 200;
+    background: var(--brand-ivory);
+    border-top: 1px solid var(--t-black-10);
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-8px);
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0s 0.2s;
+
+    &.is-open {
+        visibility: visible;
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+        transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+
+    &__inner {
+        display: flex;
+        align-items: stretch;
+        padding: 24px 0 32px;
+        gap: 0;
+
+        @media all and (max-width: 991px) {
+            display: block;
+        }
+    }
+
+
+    &__cats {
+        flex: 0 0 318px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        padding-right: 24px;
+
+        @media all and (max-width: 991px) {
+            padding: 0;
+            flex: none;
+            width: 100%;
+        }
+    }
+
+    &__cat {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        padding: 12px 16px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-family: var(--font-family);
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 150%;
+        color: var(--brand-black);
+        transition: background 0.15s, color 0.15s;
+        cursor: pointer;
+
+
+        span:not(.catalog-menu__cat-icon) {
+            flex: 1 1 auto;
+        }
+
+        &:hover {
+            background: var(--brand-white);
+            color: var(--brand-black);
+        }
+
+        svg path {
+            transition: all .3s;
+        }
+
+        &.is-active {
+            background: var(--brand-white);
+
+            .catalog-menu__cat-icon {
+                svg path {
+                    fill: var(--brand-red);
+                    fill-opacity: 1;
+                }
+            }
+
+            .catalog-menu__cat-arrow {
+                color: var(--t-black-40);
+            }
+        }
+    }
+
+    &__cat-icon {
+        width: 24px;
+        height: 24px;
+        flex-shrink: 0;
+        color: var(--t-black-60);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        svg {
+            width: 24px;
+            height: 24px;
+        }
+    }
+
+    &__cat-arrow {
+        margin-left: auto;
+        flex-shrink: 0;
+        color: var(--t-black-20);
+        transition: color 0.15s;
+    }
+
+
+    &__panels {
+        flex: 1 1 auto;
+        position: relative;
+        padding: 0 24px;
+    }
+
+    &__panel {
+        display: none;
+        gap: 24px;
+
+
+        &.is-active {
+
+            @media all and (min-width: 992px) {
+                display: flex;
+            }
+        }
+    }
+
+    &__panel-col {
+        flex: 0 0 calc(50% - 12px);
+    }
+
+    &__panel-head {
+        font-family: var(--font-family);
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 100%;
+        letter-spacing: 0.11em;
+        text-transform: uppercase;
+        color: var(--t-black-40);
+        margin-bottom: 16px;
+        margin-top: 16px;
+
+        & + & {
+            margin-top: 28px;
+        }
+    }
+
+    &__panel-list {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 24px;
+
+        li {
+            &:not(:last-child) {
+                margin-bottom: 2px;
+            }
+        }
+
+        a {
+            display: block;
+            padding: 7px 0;
+            font-family: var(--font-family);
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 100%;
+            color: var(--brand-black);
+            text-decoration: none;
+            transition: color 0.15s;
+
+            &:hover {
+                color: var(--brand-red);
+            }
+        }
+    }
+
+
+    &__promo {
+        flex: 0 0 240px;
+
+        @media all and (max-width: 991px) {
+            display: none;
+        }
+    }
+
+    &__promo-card {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        border-radius: 12px;
+        overflow: hidden;
+        position: relative;
+        text-decoration: none;
+        min-height: 360px;
+
+        img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        &:hover img {
+            transform: scale(1.04);
+        }
+    }
+
+    &__promo-body {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 20px;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.1) 55%, transparent 100%);
+    }
+
+    &__promo-tag {
+        position: absolute;
+        top: 16px;
+        left: 16px;
+        font-family: var(--font-family);
+        font-weight: 600;
+        font-size: 11px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.65);
+    }
+
+    &__promo-title {
+        font-family: var(--second-family);
+        font-weight: 600;
+        font-size: 22px;
+        line-height: 1.2;
+        color: var(--brand-white);
+        margin-bottom: 14px;
+    }
+
+    &__promo-link {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-family: var(--font-family);
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.75);
+        transition: color 0.15s;
+
+        .catalog-menu__promo-card:hover & {
+            color: var(--brand-white);
+        }
+    }
+}
+
+
+.catalog-menu-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 199;
+    display: none;
+
+    &.is-open {
+        display: block;
+    }
+}

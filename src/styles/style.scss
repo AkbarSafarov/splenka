@@ -1,0 +1,39 @@
+// ─── Bootstrap 5 (compiled from SCSS with project overrides) ──────────────────
+@use 'vendor/bootstrap-config';
+
+// ─── Base ─────────────────────────────────────────────────────────────────────
+@use 'components/colors';
+@use 'components/fonts';
+@use 'components/buttons';
+@use 'components/forms';
+
+// ─── Blocks ───────────────────────────────────────────────────────────────────
+@use 'blocks/icons';
+@use 'blocks/header';
+@use 'blocks/footer';
+@use 'blocks/main-slider';
+@use 'blocks/category';
+@use 'blocks/hit';
+@use 'blocks/product-item';
+@use 'blocks/collection';
+@use 'blocks/banner-section';
+@use 'blocks/about-block';
+@use 'blocks/bottom-block';
+@use 'blocks/filter';
+
+// ─── Vendor ───────────────────────────────────────────────────────────────────
+@use 'vendor/inner-style';
+
+// ─── Segments ─────────────────────────────────────────────────────────────────
+@use 'segments/main';
+@use 'segments/card';
+@use 'segments/card-states';
+@use 'segments/cart';
+@use 'segments/checkout';
+@use 'segments/account';
+@use 'segments/order-page';
+@use 'segments/client-service';
+@use 'segments/contacts';
+@use 'segments/comparison';
+@use 'segments/catalog-menu';
+@use 'segments/404-page' as page404;

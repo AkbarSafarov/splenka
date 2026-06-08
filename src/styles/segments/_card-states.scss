@@ -1,0 +1,43 @@
+// ── Карточка товара — состояния элементов ──────────────────────────────────
+
+.card-states-page {
+    padding: 40px 0;
+
+    &__title {
+        font-size: 24px;
+        font-weight: 600;
+        margin-bottom: 32px;
+        color: var(--brand-black);
+    }
+
+    &__section {
+        margin-bottom: 48px;
+
+        &-label {
+            font-size: 12px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--t-black-50);
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--t-black-10);
+        }
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 24px;
+        align-items: start;
+    }
+
+    &__state-label {
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--t-black-40);
+        margin-bottom: 8px;
+    }
+}

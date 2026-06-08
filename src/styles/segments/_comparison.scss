@@ -1,0 +1,282 @@
+$ct-breakpoint-lg: 991px;
+$ct-breakpoint-md: 767px;
+
+.comparison-section {
+
+}
+
+// ── Header ──────────────────────────────────────────────────────────────────
+
+.comparison-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 48px;
+
+    @media all and (max-width: $ct-breakpoint-md) {
+        flex-direction: column;
+        gap: 12px;
+        margin-bottom: 24px;
+    }
+
+    &__left {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+
+        @media all and (max-width: $ct-breakpoint-md) {
+            flex-direction: column;
+        }
+
+        h1 {
+            font-family: var(--third-family);
+            font-weight: 400;
+            font-size: 52px;
+            line-height: 108%;
+            letter-spacing: -0.02em;
+            color: var(--brand-black);
+        }
+    }
+
+    &__count {
+        font-family: var(--font-family);
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 100%;
+        letter-spacing: 0.11em;
+        text-transform: uppercase;
+        color: var(--t-black-40);
+        padding-top: 16px;
+
+        span {
+            color: var(--t-black-80);
+        }
+
+        @media all and (max-width: $ct-breakpoint-md) {
+            padding: 0;
+        }
+    }
+
+    &__clear {
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+}
+
+// ── Products slider ──────────────────────────────────────────────────────────
+
+.comparison-products-wrap {
+    position: relative;
+    margin-bottom: 24px;
+
+    .arrow_btn {
+        box-shadow: 0 4px 4px 0 rgba(45, 45, 42, 0.08);
+        background: var(--brand-white);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        &:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 8px 0 rgba(45, 45, 42, 0.12);
+        }
+
+        .bi {
+            transform: rotate(0deg);
+        }
+
+        &.prev {
+            left: -24px;
+
+            .bi {
+                transform: rotate(180deg);
+            }
+        }
+
+        &.next {
+            right: -24px;
+        }
+
+        @media all and (max-width: 991px) {
+            &.prev {
+                left: -12px;
+            }
+
+            &.next {
+                right: -12px;
+            }
+        }
+    }
+
+    .swiper-slide {
+        display: flex;
+        height: auto;
+
+        .product_item {
+            width: 100%;
+        }
+    }
+}
+
+// ── Toggle ───────────────────────────────────────────────────────────────────
+
+.comparison-toggle-table {
+    background: var(--brand-white);
+    border-radius: 32px 32px 32px 0;
+    padding: 12px 32px 32px;
+
+    @media all and (max-width: $ct-breakpoint-md) {
+        padding: 12px 16px 16px;
+    }
+}
+
+.comparison-toggle-wrap {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 20px 0;
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: var(--t-black-80);
+}
+
+.comparison-toggle {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 24px;
+    cursor: pointer;
+    flex-shrink: 0;
+
+    input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+        position: absolute;
+    }
+
+    &__track {
+        position: absolute;
+        inset: 0;
+        background: var(--t-black-20);
+        border-radius: 12px;
+        transition: background 0.2s;
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            left: 2px;
+            top: 2px;
+            background: var(--brand-white);
+            border-radius: 50%;
+            transition: transform 0.2s;
+            box-shadow: 0 1px 4px rgba(25, 20, 21, 0.2);
+        }
+    }
+
+    input:checked ~ .comparison-toggle__track {
+        background: var(--brand-red);
+
+        &::before {
+            transform: translateX(20px);
+        }
+    }
+}
+
+// ── Specs table ──────────────────────────────────────────────────────────────
+
+.comparison-specs-table-wrap {
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+
+.comparison-specs-table {
+    border-top: 1px solid var(--t-black-10);
+}
+
+
+.comparison-spec-row {
+    border-bottom: 1px solid var(--t-black-10);
+    padding: 14px 0;
+
+    .spec-row {
+        display: flex;
+        align-items: start;
+        gap: 24px;
+    }
+}
+
+.comparison-spec-label {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 143%;
+    color: var(--t-black-40);
+    margin-bottom: 4px;
+}
+
+.comparison-spec-col {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 140%;
+    color: var(--t-black-80);
+    padding-right: 12px;
+    flex: 0 0 calc(25% - 18px);
+
+    @media all and (max-width: 1279px) {
+        flex: 0 0 calc(33% - 16px);
+    }
+
+    @media all and (max-width: 991px) {
+        flex: 0 0 calc(50% - 12px);
+    }
+
+    @media all and (max-width: 579px) {
+        flex: 0 0 calc(100% - 0px);
+    }
+}
+
+// ── Delete row ────────────────────────────────────────────────────────────────
+
+.comparison-delete-row {
+    display: flex;
+    align-items: start;
+    gap: 24px;
+    padding-top: 24px;
+    border-top: 1px solid var(--t-black-10);
+}
+
+.comparison-delete-col {
+    padding-right: 16px;
+    flex: 0 0 calc(25% - 18px);
+
+    @media all and (max-width: 1279px) {
+        flex: 0 0 calc(33% - 16px);
+    }
+
+    @media all and (max-width: 991px) {
+        flex: 0 0 calc(50% - 12px);
+    }
+
+    @media all and (max-width: 579px) {
+        flex: 0 0 calc(100% - 0px);
+    }
+
+    &:last-child {
+        padding-right: 0;
+    }
+}
+
+.comparison-delete-btn {
+    width: 100%;
+    justify-content: space-between;
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}

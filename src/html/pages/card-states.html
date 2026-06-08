@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    @@include('head.html', {"title": "Состояния карточки товара — Rango"})
+</head>
+<body>
+<div class="site_wrapper">
+    @@include('header.html')
+    <div class="content_block_wr">
+        <div class="container-xl">
+            @@include('path.html')
+            <h1>Карточка товара — состояния элементов</h1>
+        </div>
+
+        <div class="card-states-page">
+            <div class="container-xl">
+
+                <div class="card-states-page__section">
+                    <div class="card-states-page__section-label">Базовое состояние</div>
+                    <div class="card-states-page__grid">
+                        <div>
+                            <div class="card-states-page__state-label">Default</div>
+                            @@include('product.html')
+                        </div>
+                        <div>
+                            <div class="card-states-page__state-label">Hover</div>
+                            @@include('product2.html')
+                        </div>
+                        <div>
+                            <div class="card-states-page__state-label">В корзине</div>
+                            @@include('product3.html')
+                        </div>
+                        <div>
+                            <div class="card-states-page__state-label">В сравнении</div>
+                            @@include('product3.html')
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-states-page__section">
+                    <div class="card-states-page__section-label">Специальные состояния</div>
+                    <div class="card-states-page__grid">
+                        <div>
+                            <div class="card-states-page__state-label">Уже продано</div>
+                            @@include('product.html')
+                        </div>
+                        <div>
+                            <div class="card-states-page__state-label">В избранном</div>
+                            @@include('product2.html')
+                        </div>
+                        <div>
+                            <div class="card-states-page__state-label">Новинка</div>
+                            @@include('product3.html')
+                        </div>
+                        <div>
+                            <div class="card-states-page__state-label">Хит продаж</div>
+                            @@include('product3.html')
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    @@include('footer.html')
+</div>
+</body>
+</html>

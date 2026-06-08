@@ -1,0 +1,156 @@
+// ── Buttons ────────────────────────────────────────────────────────────────
+// Via Bootstrap variables ($btn-*):
+//   padding, font-family, font-size, font-weight, line-height, border-width,
+//   border-radius (24px base), colors, disabled-opacity, transition.
+//
+// Via CSS below (Bootstrap vars can't cover these):
+//   asymmetric radius (24 24 24 0), letter-spacing, text-transform, gap.
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 24px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    border-radius: 24px 24px 24px 0;
+    text-decoration: none;
+
+    svg {
+        flex-shrink: 0;
+
+        path {
+            transition: all .3s;
+        }
+    }
+
+    &:hover {
+
+        &.btn-outline-light {
+
+            svg path{
+                fill: #000;
+            }
+        }
+
+        &.btn-outline-secondary {
+            svg path{
+                fill: #fff;
+            }
+        }
+    }
+}
+
+.btn-sm {
+    gap: 16px;
+    border-radius: 20px 20px 20px 0;
+}
+
+.btn-lg {
+    gap: 28px;
+    border-radius: 28px 28px 28px 0;
+}
+
+// ── Pill modifier (rounded-pill already exists in BS but resets bottom-left) ─
+// Use .btn-pill when you need fully round, not asymmetric
+.btn-pill {
+    border-radius: 100px !important;
+}
+
+// ── Icon-only circle button ─────────────────────────────────────────────────
+// Usage: <button class="btn btn-icon btn-dark">
+.btn-icon {
+    width:  40px;
+    height: 40px;
+    padding: 0;
+    gap: 0;
+    border-radius: 50% !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    &.btn-sm { width: 32px; height: 32px; }
+    &.btn-lg { width: 48px; height: 48px; }
+}
+
+// ── Ghost variants ──────────────────────────────────────────────────────────
+.btn-ghost-dark {
+    color: var(--brand-black);
+    background: transparent;
+    border-color: transparent;
+
+    &:hover  { background: var(--t-black-10); border-color: transparent; color: var(--brand-black); }
+    &:active { background: var(--t-black-20); border-color: transparent; }
+}
+
+.btn-ghost-primary {
+    color: var(--brand-gold);
+    background: transparent;
+    border-color: transparent;
+
+    &:hover  { background: var(--t-gold-10); border-color: transparent; color: var(--brand-gold); }
+    &:active { background: var(--t-gold-20); border-color: transparent; }
+}
+
+.arrow_btn {
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 4px 0 rgba(45, 45, 42, 0.08);
+    background: var(--brand-white);
+    transition: all .3s;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 10;
+
+    &:after {
+        display: none;
+    }
+
+    &:hover {
+        opacity: .6;
+    }
+
+    &.next {
+        .bi {
+            transform: rotate(180deg);
+        }
+    }
+}
+
+.link_btn {
+    display: flex;
+    gap: 8px;
+    text-decoration: none;
+    align-items: center;
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    text-align: center;
+    color: var(--t-black-80);
+    transition: all .3s;
+    border: none;
+    outline: none;
+    white-space: nowrap;
+    position: relative;
+    cursor: pointer;
+
+    svg path {
+        fill: var(--t-black-80);
+    }
+
+    &:hover {
+        color: var(--brand-gold);
+
+        svg path {
+            fill: var(--brand-gold);
+        }
+    }
+}

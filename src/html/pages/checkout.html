@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    @@include('head.html', {"title": "Оформление заказа — Rango"})
+</head>
+<body>
+<div class="site_wrapper">
+    @@include('header.html')
+    <div class="content_block_wr">
+        <div class="container-xl">
+            @@include('path.html')
+            <div class="row align-items-end">
+                <div class="col-lg-9 col-12">
+                    <h1 class="m-0">Оформление заказа</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="checkout-page">
+            <div class="container-xl">
+                <div class="row g-4 align-items-start">
+
+                    <div class="col-lg-8 col-12">
+
+                        <div class="order__item">
+                            <div class="order__item-top">
+                                <div class="order__item-head">Контактные данные</div>
+                                <div class="order__item-step">Шаг 1 из 3</div>
+                            </div>
+                            <div class="order__item-border">
+                                <div class="order__item-group-radio">
+                                    <label class="order__item-label-radio">
+                                        <input type="radio" name="person_type" checked>
+                                        <i></i>
+                                        <span class="order__item-radio-name">Физическое лицо</span>
+                                    </label>
+                                    <label class="order__item-label-radio">
+                                        <input type="radio" name="person_type">
+                                        <i></i>
+                                        <span class="order__item-radio-name">Юридическое лицо</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="order__item-fields">
+                                <div class="order__item-row field-name">
+                                    <span>Имя и фамилия*</span>
+                                    <input type="text" placeholder="Введите имя и фамилию">
+                                </div>
+                                <div class="order__item-row">
+                                    <span>Телефон*</span>
+                                    <input type="tel" placeholder="+7 (___) ___-__-__">
+                                </div>
+                                <div class="order__item-row">
+                                    <span>E-mail*</span>
+                                    <input type="email" placeholder="example@mail.ru">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="order__item">
+                            <div class="order__item-top">
+                                <div class="order__item-head">Способ доставки</div>
+                                <div class="order__item-step">Шаг 2 из 3</div>
+                            </div>
+                            <div class="order__item-border">
+                                <div class="order__item-group-radio">
+                                    <label class="order__item-label-radio">
+                                        <input type="radio" name="delivery" checked>
+                                        <i></i>
+                                        <span class="order__item-radio-name">Курьером до двери</span>
+                                    </label>
+                                    <label class="order__item-label-radio">
+                                        <input type="radio" name="delivery">
+                                        <i></i>
+                                        <span class="order__item-radio-name">Самовывоз</span>
+                                    </label>
+                                    <label class="order__item-label-radio">
+                                        <input type="radio" name="delivery">
+                                        <i></i>
+                                        <span class="order__item-radio-name">Почта России</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="order__item-fields">
+                                <div class="order__item-row">
+                                    <span>Город*</span>
+                                    <input type="text" placeholder="Начните вводить город">
+                                </div>
+                                <div class="order__item-row">
+                                    <span>Улица*</span>
+                                    <input type="text" placeholder="Улица">
+                                </div>
+                                <div class="row g-3">
+                                    <div class="col-4">
+                                        <div class="order__item-row">
+                                            <span>Дом*</span>
+                                            <input type="text" placeholder="Дом">
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="order__item-row">
+                                            <span>Квартира</span>
+                                            <input type="text" placeholder="Кв.">
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="order__item-row">
+                                            <span>Индекс</span>
+                                            <input type="text" placeholder="000000">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="order__item-row">
+                                    <span>Комментарий к доставке</span>
+                                    <textarea placeholder="Удобное время, код домофона и т.д."></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="order__item">
+                            <div class="order__item-top">
+                                <div class="order__item-head">Способ оплаты</div>
+                                <div class="order__item-step">Шаг 3 из 3</div>
+                            </div>
+                            <div class="order__item-border">
+                                <div class="order__item-group-radio">
+                                    <label class="order__item-label-radio">
+                                        <input type="radio" name="payment" checked>
+                                        <i></i>
+                                        <span class="order__item-radio-name">Банковская карта онлайн</span>
+                                    </label>
+                                    <label class="order__item-label-radio">
+                                        <input type="radio" name="payment">
+                                        <i></i>
+                                        <span class="order__item-radio-name">Наличными при получении</span>
+                                    </label>
+                                    <label class="order__item-label-radio">
+                                        <input type="radio" name="payment">
+                                        <i></i>
+                                        <span class="order__item-radio-name">Счёт для юридических лиц</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="order__item-fields">
+                                <div class="order__item-row">
+                                    <span>Промокод</span>
+                                    <div class="input-group">
+                                        <input type="text" placeholder="Введите промокод">
+                                        <button class="btn_button border" type="button">
+                                            <span>Применить</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="checkout-page__agreement">
+                            <label class="checkbox-label">
+                                <input type="checkbox" checked>
+                                <i></i>
+                                <span class="checkbox-text">Я согласен с <a href="#">условиями обработки персональных данных</a> и <a href="#">публичной офертой</a></span>
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn_button black">
+                            <span>Оформить заказ</span>
+                            <i class="bi">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M20.7806 12.5306L14.0306 19.2806C13.8899 19.4213 13.699 19.5004 13.5 19.5004C13.301 19.5004 13.1101 19.4213 12.9694 19.2806C12.8286 19.1399 12.7496 18.949 12.7496 18.75C12.7496 18.551 12.8286 18.3601 12.9694 18.2194L18.4397 12.75L3.75 12.75C3.55109 12.75 3.36032 12.671 3.21967 12.5303C3.07902 12.3897 3 12.1989 3 12C3 11.8011 3.07902 11.6103 3.21967 11.4697C3.36032 11.329 3.55109 11.25 3.75 11.25L18.4397 11.25L12.9694 5.78061C12.8286 5.63988 12.7496 5.44901 12.7496 5.24999C12.7496 5.05097 12.8286 4.8601 12.9694 4.71936C13.1101 4.57863 13.301 4.49957 13.5 4.49957C13.699 4.49957 13.8899 4.57863 14.0306 4.71936L20.7806 11.4694C20.8504 11.539 20.9057 11.6217 20.9434 11.7128C20.9812 11.8038 21.0006 11.9014 21.0006 12C21.0006 12.0986 20.9812 12.1961 20.9434 12.2872C20.9057 12.3782 20.8504 12.461 20.7806 12.5306Z" fill="#fff"/>
+                                </svg>
+                            </i>
+                        </button>
+
+                    </div>
+
+                    <div class="col-lg-4 col-12">
+                        <div class="cart-summary">
+                            <div class="cart-summary__title">Ваш заказ</div>
+                            <div class="cart-summary__items">
+                                <div class="cart-summary__item">
+                                    <div class="cart-summary__item-img">
+                                        <img src="files/p1.jpg" alt="">
+                                    </div>
+                                    <div class="cart-summary__item-info">
+                                        <div class="cart-summary__item-name">Смеситель для ванны Raglo RS-4210</div>
+                                        <div class="cart-summary__item-qty">1 шт.</div>
+                                        <div class="cart-summary__item-price">24 900 ₽</div>
+                                    </div>
+                                </div>
+                                <div class="cart-summary__item">
+                                    <div class="cart-summary__item-img">
+                                        <img src="files/p2.jpg" alt="">
+                                    </div>
+                                    <div class="cart-summary__item-info">
+                                        <div class="cart-summary__item-name">Душевая система Raglo RS-7102</div>
+                                        <div class="cart-summary__item-qty">1 шт.</div>
+                                        <div class="cart-summary__item-price">38 500 ₽</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cart-summary__totals">
+                                <div class="cart-summary__row">
+                                    <span>Товары (2 шт.)</span>
+                                    <span>63 400 ₽</span>
+                                </div>
+                                <div class="cart-summary__row">
+                                    <span>Скидка</span>
+                                    <span class="text-danger">−3 400 ₽</span>
+                                </div>
+                                <div class="cart-summary__row">
+                                    <span>Доставка</span>
+                                    <span>Бесплатно</span>
+                                </div>
+                                <div class="cart-summary__row cart-summary__row--total">
+                                    <span>Итого</span>
+                                    <span>60 000 ₽</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        @@include('preim-block.html')
+    </div>
+    @@include('footer.html')
+</div>
+</body>
+</html>
