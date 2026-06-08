@@ -1,0 +1,1 @@
+document.addEventListener("DOMContentLoaded",function(){var e=document.querySelector(".notify-form");e&&e.addEventListener("submit",function(e){e.preventDefault();e=this.querySelector('input[type="email"]');e&&e.value.trim()?(console.log("notify:",e.value),this.classList.add("is-submitted")):e&&e.classList.add("is-error")})});

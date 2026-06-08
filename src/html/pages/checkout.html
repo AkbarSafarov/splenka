@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    @@include('head.html', {"title": "Оформление заказа — Rango"})
+    @@include('head.html', {"title": "Оформление заказа — Splenka"})
 </head>
 <body>
 <div class="site_wrapper">
@@ -10,7 +10,7 @@
         <div class="container-xl">
             @@include('path.html')
             <div class="row align-items-end">
-                <div class="col-lg-9 col-12">
+                <div class="col-12">
                     <h1 class="m-0">Оформление заказа</h1>
                 </div>
             </div>
@@ -20,12 +20,14 @@
             <div class="container-xl">
                 <div class="row g-4 align-items-start">
 
+                    <!-- ── Left column ────────────────────────────────── -->
                     <div class="col-lg-8 col-12">
 
+                        <!-- STEP 1 : Ваши контакты -->
                         <div class="order__item">
                             <div class="order__item-top">
-                                <div class="order__item-head">Контактные данные</div>
-                                <div class="order__item-step">Шаг 1 из 3</div>
+                                <div class="order__item-head">Ваши контакты</div>
+                                <div class="order__item-step">ШАГ 1 ИЗ 6</div>
                             </div>
                             <div class="order__item-border">
                                 <div class="order__item-group-radio">
@@ -42,178 +44,395 @@
                                 </div>
                             </div>
                             <div class="order__item-fields">
-                                <div class="order__item-row field-name">
+                                <div class="order__item-row order__item-row--full">
                                     <span>Имя и фамилия*</span>
-                                    <input type="text" placeholder="Введите имя и фамилию">
+                                    <input type="text" class="is-filled" value="Василий Иванов" placeholder="Введите имя и фамилию">
                                 </div>
                                 <div class="order__item-row">
                                     <span>Телефон*</span>
-                                    <input type="tel" placeholder="+7 (___) ___-__-__">
+                                    <input type="tel" placeholder="+7 (000) 000-00-00">
                                 </div>
                                 <div class="order__item-row">
-                                    <span>E-mail*</span>
-                                    <input type="email" placeholder="example@mail.ru">
+                                    <span>Электронная почта</span>
+                                    <input type="email" placeholder="Введите">
                                 </div>
                             </div>
                         </div>
 
+                        <!-- STEP 2 : Способ получения -->
                         <div class="order__item">
                             <div class="order__item-top">
-                                <div class="order__item-head">Способ доставки</div>
-                                <div class="order__item-step">Шаг 2 из 3</div>
+                                <div class="order__item-head">Способ получения</div>
+                                <div class="order__item-step">ШАГ 2 ИЗ 6</div>
                             </div>
-                            <div class="order__item-border">
-                                <div class="order__item-group-radio">
-                                    <label class="order__item-label-radio">
-                                        <input type="radio" name="delivery" checked>
-                                        <i></i>
-                                        <span class="order__item-radio-name">Курьером до двери</span>
-                                    </label>
-                                    <label class="order__item-label-radio">
-                                        <input type="radio" name="delivery">
-                                        <i></i>
-                                        <span class="order__item-radio-name">Самовывоз</span>
-                                    </label>
-                                    <label class="order__item-label-radio">
-                                        <input type="radio" name="delivery">
-                                        <i></i>
-                                        <span class="order__item-radio-name">Почта России</span>
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="order__item-fields">
-                                <div class="order__item-row">
-                                    <span>Город*</span>
-                                    <input type="text" placeholder="Начните вводить город">
-                                </div>
-                                <div class="order__item-row">
-                                    <span>Улица*</span>
-                                    <input type="text" placeholder="Улица">
-                                </div>
-                                <div class="row g-3">
-                                    <div class="col-4">
-                                        <div class="order__item-row">
-                                            <span>Дом*</span>
-                                            <input type="text" placeholder="Дом">
-                                        </div>
-                                    </div>
-                                    <div class="col-4">
-                                        <div class="order__item-row">
-                                            <span>Квартира</span>
-                                            <input type="text" placeholder="Кв.">
-                                        </div>
-                                    </div>
-                                    <div class="col-4">
-                                        <div class="order__item-row">
-                                            <span>Индекс</span>
-                                            <input type="text" placeholder="000000">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="order__item-row">
-                                    <span>Комментарий к доставке</span>
-                                    <textarea placeholder="Удобное время, код домофона и т.д."></textarea>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="order__item">
-                            <div class="order__item-top">
-                                <div class="order__item-head">Способ оплаты</div>
-                                <div class="order__item-step">Шаг 3 из 3</div>
-                            </div>
-                            <div class="order__item-border">
-                                <div class="order__item-group-radio">
-                                    <label class="order__item-label-radio">
-                                        <input type="radio" name="payment" checked>
-                                        <i></i>
-                                        <span class="order__item-radio-name">Банковская карта онлайн</span>
-                                    </label>
-                                    <label class="order__item-label-radio">
-                                        <input type="radio" name="payment">
-                                        <i></i>
-                                        <span class="order__item-radio-name">Наличными при получении</span>
-                                    </label>
-                                    <label class="order__item-label-radio">
-                                        <input type="radio" name="payment">
-                                        <i></i>
-                                        <span class="order__item-radio-name">Счёт для юридических лиц</span>
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="order__item-fields">
-                                <div class="order__item-row">
-                                    <span>Промокод</span>
-                                    <div class="input-group">
-                                        <input type="text" placeholder="Введите промокод">
-                                        <button class="btn_button border" type="button">
-                                            <span>Применить</span>
+                            <div class="order__item-fields order__item-fields--mb">
+                                <div class="order__item-row order__item-row--full">
+                                    <span>Местоположение*</span>
+                                    <div class="order__item-field">
+                                        <input type="text" value="Москва, центр. Россия" placeholder="Начните вводить город">
+                                        <button type="button" class="field-clear-btn">
+                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13 3L3 13M3 3L13 13" stroke="#1A332D" stroke-opacity="0.6" stroke-width="1.5" stroke-linecap="round"/></svg>
                                         </button>
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="checkout-page__agreement">
-                            <label class="checkbox-label">
-                                <input type="checkbox" checked>
-                                <i></i>
-                                <span class="checkbox-text">Я согласен с <a href="#">условиями обработки персональных данных</a> и <a href="#">публичной офертой</a></span>
-                            </label>
-                        </div>
-
-                        <button type="submit" class="btn_button black">
-                            <span>Оформить заказ</span>
-                            <i class="bi">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M20.7806 12.5306L14.0306 19.2806C13.8899 19.4213 13.699 19.5004 13.5 19.5004C13.301 19.5004 13.1101 19.4213 12.9694 19.2806C12.8286 19.1399 12.7496 18.949 12.7496 18.75C12.7496 18.551 12.8286 18.3601 12.9694 18.2194L18.4397 12.75L3.75 12.75C3.55109 12.75 3.36032 12.671 3.21967 12.5303C3.07902 12.3897 3 12.1989 3 12C3 11.8011 3.07902 11.6103 3.21967 11.4697C3.36032 11.329 3.55109 11.25 3.75 11.25L18.4397 11.25L12.9694 5.78061C12.8286 5.63988 12.7496 5.44901 12.7496 5.24999C12.7496 5.05097 12.8286 4.8601 12.9694 4.71936C13.1101 4.57863 13.301 4.49957 13.5 4.49957C13.699 4.49957 13.8899 4.57863 14.0306 4.71936L20.7806 11.4694C20.8504 11.539 20.9057 11.6217 20.9434 11.7128C20.9812 11.8038 21.0006 11.9014 21.0006 12C21.0006 12.0986 20.9812 12.1961 20.9434 12.2872C20.9057 12.3782 20.8504 12.461 20.7806 12.5306Z" fill="#fff"/>
-                                </svg>
-                            </i>
-                        </button>
-
-                    </div>
-
-                    <div class="col-lg-4 col-12">
-                        <div class="cart-summary">
-                            <div class="cart-summary__title">Ваш заказ</div>
-                            <div class="cart-summary__items">
-                                <div class="cart-summary__item">
-                                    <div class="cart-summary__item-img">
-                                        <img src="files/p1.jpg" alt="">
+                            <div class="order__item-labels">
+                                <!-- Доставка по МО -->
+                                <label class="order__item-label block">
+                                    <input type="radio" name="delivery_type">
+                                    <div class="order__item-radio delivery">
+                                        <span class="order__item-radio-circle"><i></i></span>
+                                        <div class="right">
+                                            <span>Доставка по Московской области</span>
+                                            <span class="order__item-radio-descr">При заказе от 5000 ₽ доставка в радиусе МКАД осуществляется бесплатно</span>
+                                        </div>
                                     </div>
-                                    <div class="cart-summary__item-info">
-                                        <div class="cart-summary__item-name">Смеситель для ванны Raglo RS-4210</div>
-                                        <div class="cart-summary__item-qty">1 шт.</div>
-                                        <div class="cart-summary__item-price">24 900 ₽</div>
+                                </label>
+
+                                <!-- Самовывоз -->
+                                <label class="order__item-label block">
+                                    <input type="radio" name="delivery_type">
+                                    <div class="order__item-radio delivery">
+                                        <span class="order__item-radio-circle"><i></i></span>
+                                        <div class="right">
+                                            <span>Самовывоз</span>
+                                            <span class="order__item-radio-descr">Бесплатный самовывоз в центре Москвы по адресу ул. Зоологическая Пресненка, д.5</span>
+                                        </div>
+                                    </div>
+                                </label>
+
+                                <!-- Курьерская служба (active / expanded) -->
+                                <label class="order__item-label block active">
+                                    <input type="radio" name="delivery_type" checked>
+                                    <div class="order__item-radio delivery">
+                                        <span class="order__item-radio-circle"><i></i></span>
+                                        <div class="right">
+                                            <span>Курьерская служба</span>
+                                            <span class="order__item-radio-descr">Доставка силами курьерской службы от сторонних служб</span>
+                                        </div>
+                                    </div>
+                                    <div class="order__item-label-body">
+
+                                        <!-- СДЭК -->
+                                        <div class="delivery-provider">
+                                            <div class="delivery-provider__logo delivery-provider__logo--cdek">
+                                                <svg height="20" viewBox="0 0 60 20" fill="none" xmlns="http://www.w3.org/2000/svg"><text x="0" y="16" font-family="Arial,sans-serif" font-weight="700" font-size="18" fill="#1A332D">СДЭК</text></svg>
+                                            </div>
+                                            <div class="order__item-label-wrapper">
+                                                <label class="order__item-label">
+                                                    <input type="radio" name="courier_service">
+                                                    <div class="order__item-label-radio">
+                                                        <div class="top-radio">
+                                                            <i></i>
+                                                            <span class="name">Посылка «Склад-Дверь»</span>
+                                                        </div>
+                                                        <div class="order__item-radio-wrap">
+                                                            <div class="order__item-radio-group end">
+                                                                <div class="order__item-radio-right"><span>995 ₽</span></div>
+                                                                <div class="order__item-radio-days">2 дня</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </label>
+                                                <label class="order__item-label">
+                                                    <input type="radio" name="courier_service">
+                                                    <div class="order__item-label-radio">
+                                                        <div class="top-radio">
+                                                            <i></i>
+                                                            <span class="name">Направление «Склад-Дверь»</span>
+                                                        </div>
+                                                        <div class="order__item-radio-wrap">
+                                                            <div class="order__item-radio-group end">
+                                                                <div class="order__item-radio-right"><span>1 270 ₽</span></div>
+                                                                <div class="order__item-radio-days">1 день</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </label>
+                                                <label class="order__item-label">
+                                                    <input type="radio" name="courier_service">
+                                                    <div class="order__item-label-radio">
+                                                        <div class="top-radio">
+                                                            <i></i>
+                                                            <span class="name">Посылка «Дверь-Дверь»</span>
+                                                        </div>
+                                                        <div class="order__item-radio-wrap">
+                                                            <div class="order__item-radio-group end">
+                                                                <div class="order__item-radio-right"><span>1 295 ₽</span></div>
+                                                                <div class="order__item-radio-days"></div>
+                                                                <button type="button" class="war-icon" data-tippy-content="Склад Дверь — Отправляете самостоятельно, доставляет груз курьерская служба СДЭК. Получатель подписывает акт-приём отправки товара.">
+                                                                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 0C3.136 0 0 3.136 0 7s3.136 7 7 7 7-3.136 7-7-3.136-7-7-7zm.7 10.5H6.3V6.3h1.4v4.2zm0-5.6H6.3V3.5h1.4v1.4z" fill="#1A332D" fill-opacity="0.4"/></svg>
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <!-- Boxberry -->
+                                        <div class="delivery-provider">
+                                            <div class="delivery-provider__logo delivery-provider__logo--boxberry">
+                                                <svg height="20" viewBox="0 0 90 20" fill="none" xmlns="http://www.w3.org/2000/svg"><text x="0" y="16" font-family="Arial,sans-serif" font-weight="700" font-size="16" fill="#e8402a">boxberry</text></svg>
+                                            </div>
+                                            <div class="order__item-label-wrapper">
+                                                <label class="order__item-label">
+                                                    <input type="radio" name="courier_service" checked>
+                                                    <div class="order__item-label-radio">
+                                                        <div class="top-radio">
+                                                            <i></i>
+                                                            <span class="name">Стандартный тариф</span>
+                                                        </div>
+                                                        <div class="order__item-radio-wrap">
+                                                            <div class="order__item-radio-group end">
+                                                                <div class="order__item-radio-right"><span>649.90 ₽</span></div>
+                                                                <div class="order__item-radio-days">1 день</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <!-- Деловые линии -->
+                                        <div class="delivery-provider">
+                                            <div class="delivery-provider__logo delivery-provider__logo--dl">
+                                                <svg height="20" viewBox="0 0 140 20" fill="none" xmlns="http://www.w3.org/2000/svg"><text x="0" y="16" font-family="Arial,sans-serif" font-weight="700" font-size="14" fill="#1A332D">▲ Деловые линии</text></svg>
+                                            </div>
+                                            <div class="order__item-label-wrapper">
+                                                <label class="order__item-label">
+                                                    <input type="radio" name="courier_service">
+                                                    <div class="order__item-label-radio">
+                                                        <div class="top-radio">
+                                                            <i></i>
+                                                            <span class="name">Автотранспортная перевозка</span>
+                                                        </div>
+                                                        <div class="order__item-radio-wrap">
+                                                            <div class="order__item-radio-group end">
+                                                                <div class="order__item-radio-right"><span>1 600 ₽</span></div>
+                                                                <div class="order__item-radio-days">3 дня</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </label>
+                                                <label class="order__item-label">
+                                                    <input type="radio" name="courier_service">
+                                                    <div class="order__item-label-radio">
+                                                        <div class="top-radio">
+                                                            <i></i>
+                                                            <span class="name">Авиатранспортная перевозка</span>
+                                                        </div>
+                                                        <div class="order__item-radio-wrap">
+                                                            <div class="order__item-radio-group end">
+                                                                <div class="order__item-radio-right"><span>3 165 ₽</span></div>
+                                                                <div class="order__item-radio-days">1 день</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                    </div><!-- /.order__item-label-body -->
+                                </label>
+
+                                <!-- Пункт выдачи -->
+                                <label class="order__item-label block">
+                                    <input type="radio" name="delivery_type">
+                                    <div class="order__item-radio delivery">
+                                        <span class="order__item-radio-circle"><i></i></span>
+                                        <div class="right">
+                                            <span>Пункт выдачи</span>
+                                            <span class="order__item-radio-descr">Доставка заказа в пункты самовывоза одной из курьерских служб</span>
+                                        </div>
+                                    </div>
+                                </label>
+
+                            </div><!-- /.order__item-labels -->
+                        </div>
+
+                        <!-- STEP 3 : Адрес доставки -->
+                        <div class="order__item">
+                            <div class="order__item-top">
+                                <div class="order__item-head">Адрес доставки</div>
+                                <div class="order__item-step">ШАГ 3 ИЗ 6</div>
+                            </div>
+                            <div class="order__item-fields">
+                                <div class="order__item-row order__item-row--full">
+                                    <span>Улица*</span>
+                                    <input type="text" placeholder="Введите">
+                                </div>
+                                <div class="order__item-row">
+                                    <span>Дом/Корп.*</span>
+                                    <input type="tel" placeholder="+7 (000) 000-00-00">
+                                </div>
+                                <div class="order__item-row">
+                                    <span>Квартира/Офис</span>
+                                    <input type="text" placeholder="Введите">
+                                </div>
+                                <div class="order__item-row">
+                                    <span>Подъезд</span>
+                                    <input type="text" placeholder="Введите">
+                                </div>
+                                <div class="order__item-row">
+                                    <span>Код домофона</span>
+                                    <input type="text" placeholder="Введите">
+                                </div>
+                                <div class="order__item-row order__item-row--full">
+                                    <span>Комментарий</span>
+                                    <textarea placeholder="Введите" rows="4"></textarea>
+                                </div>
+                            </div>
+                            <a href="#" class="order__item-map">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 1.875C8.21 1.875 6.875 3.28 6.875 5c0 2.398 3.125 6.25 3.125 6.25S13.125 7.398 13.125 5c0-1.72-1.335-3.125-3.125-3.125zM10 6.25a1.25 1.25 0 110-2.5 1.25 1.25 0 010 2.5zM15.625 10H13.75l-1.875 3.75H8.125L6.25 10H4.375L2.5 17.5h15L15.625 10z" fill="#1A332D" fill-opacity="0.8"/></svg>
+                                Указать на карте
+                            </a>
+                        </div>
+
+                        <!-- STEP 4 : Детали доставки -->
+                        <div class="order__item">
+                            <div class="order__item-top">
+                                <div class="order__item-head">Детали доставки</div>
+                                <div class="order__item-step">ШАГ 4 ИЗ 6</div>
+                            </div>
+                            <div class="order__item-labels">
+                                <div class="order__item-padding-wrapper">
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" id="anotherPerson" checked>
+                                        <label class="catalog__aside-text" for="anotherPerson">Заказ будет получать другой человек</label>
                                     </div>
                                 </div>
-                                <div class="cart-summary__item">
-                                    <div class="cart-summary__item-img">
-                                        <img src="files/p2.jpg" alt="">
+                                <div class="order__item-fields">
+                                    <div class="order__item-row order__item-row--full">
+                                        <span>Телефон*</span>
+                                        <input type="tel" placeholder="+7 (000) 000-00-00">
                                     </div>
-                                    <div class="cart-summary__item-info">
-                                        <div class="cart-summary__item-name">Душевая система Raglo RS-7102</div>
-                                        <div class="cart-summary__item-qty">1 шт.</div>
-                                        <div class="cart-summary__item-price">38 500 ₽</div>
+                                </div>
+                                <div class="order__item-padding-wrapper">
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" id="callHour">
+                                        <label class="catalog__aside-text" for="callHour">Позвонить за час</label>
                                     </div>
                                 </div>
                             </div>
-                            <div class="cart-summary__totals">
-                                <div class="cart-summary__row">
-                                    <span>Товары (2 шт.)</span>
-                                    <span>63 400 ₽</span>
+                        </div>
+
+                        <!-- STEP 5 : Способ оплаты -->
+                        <div class="order__item">
+                            <div class="order__item-top">
+                                <div class="order__item-head">Способ оплаты</div>
+                                <div class="order__item-step">ШАГ 5 ИЗ 6</div>
+                            </div>
+                            <div class="order__item-labels-payment">
+                                <label class="order__item-label">
+                                    <input type="radio" name="payment">
+                                    <div class="order__item-radio payment">
+                                        <i></i>
+                                        <div>
+                                            <span>Онлайн</span>
+                                            <div class="order__item-radio-descr">Оплата производится через сайт после оформления заказа</div>
+                                        </div>
+                                    </div>
+                                </label>
+                                <label class="order__item-label">
+                                    <input type="radio" name="payment">
+                                    <div class="order__item-radio payment">
+                                        <i></i>
+                                        <div>
+                                            <span>Картой или QR-коду</span>
+                                            <div class="order__item-radio-descr">Оплата производится после получения товара</div>
+                                        </div>
+                                    </div>
+                                </label>
+                                <label class="order__item-label">
+                                    <input type="radio" name="payment" checked>
+                                    <div class="order__item-radio payment">
+                                        <i></i>
+                                        <div>
+                                            <span>Наличными</span>
+                                            <div class="order__item-radio-descr">Оплата производится после получения товара</div>
+                                        </div>
+                                    </div>
+                                </label>
+                                <label class="order__item-label">
+                                    <input type="radio" name="payment">
+                                    <div class="order__item-radio payment">
+                                        <i></i>
+                                        <div>
+                                            <span>Банковский перевод</span>
+                                            <div class="order__item-radio-descr">Оплата по счёту на реквизиты компании для юридических лиц</div>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- STEP 6 : Подтверждение заказа -->
+                        <div class="order__item">
+                            <div class="order__item-top">
+                                <div class="order__item-head">Подтверждение заказа</div>
+                                <div class="order__item-step">ШАГ 6 ИЗ 6</div>
+                            </div>
+                            <div class="order__item-labels">
+                                <div class="order__item-padding-wrapper">
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" id="needCall">
+                                        <div>
+                                            <label class="catalog__aside-text" for="needCall">Нужен звонок от менеджера</label>
+                                            <span class="catalog__aside-subtext">У меня остались вопросы</span>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="cart-summary__row">
-                                    <span>Скидка</span>
-                                    <span class="text-danger">−3 400 ₽</span>
+                            </div>
+                        </div>
+
+                    </div><!-- /.col-lg-8 -->
+
+                    <!-- ── Right column : Order summary ────────────────── -->
+                    <div class="col-lg-4 col-12">
+                        <div class="basket__aside checkout-aside">
+                            <div class="basket__aside-body">
+                                <div class="basket__aside-title">
+                                    <div class="title">Ваш заказ</div>
+                                    <div class="quantity">ТОВАРОВ: <span>4</span></div>
                                 </div>
-                                <div class="cart-summary__row">
+
+                                <div class="basket__aside-calc">
+                                    <span>Товары</span>
+                                    <span>53 800 ₽</span>
+                                </div>
+                                <div class="basket__aside-calc">
+                                    <span>Скидка по акции</span>
+                                    <span class="lime">−4 990 ₽</span>
+                                </div>
+                                <div class="basket__aside-calc">
+                                    <span>Сборка и установка</span>
+                                    <span>2 500 ₽</span>
+                                </div>
+                                <div class="basket__aside-calc big">
+                                    <span>Бонусы за покупку</span>
+                                    <span class="right">+48
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 1a7 7 0 100 14A7 7 0 008 1zm.7 10.5H7.3V7.3h1.4v4.2zm0-5.6H7.3V4.5h1.4v1.4z" fill="#46795f"/></svg>
+                                    </span>
+                                </div>
+                                <div class="basket__aside-calc">
                                     <span>Доставка</span>
-                                    <span>Бесплатно</span>
+                                    <span>649.90 ₽</span>
                                 </div>
-                                <div class="cart-summary__row cart-summary__row--total">
-                                    <span>Итого</span>
-                                    <span>60 000 ₽</span>
+
+                                <div class="basket__aside-calc total">
+                                    <span class="lsp">Итого</span>
+                                    <span class="right">48 810 ₽</span>
+                                </div>
+
+                                <button type="submit" class="basket__aside-btn">
+                                    <span>ОТПРАВИТЬ ЗАКАЗ</span>
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.78 12.53L14.03 19.28a.75.75 0 01-1.06-1.06l5.47-5.47H3.75a.75.75 0 010-1.5h14.69l-5.47-5.47a.75.75 0 011.06-1.06l6.75 6.75a.75.75 0 010 1.06z" fill="#fff"/></svg>
+                                </button>
+
+                                <div class="basket__aside-info">
+                                    Нажимая «Отправить заказ», я даю своё Согласие на обработку персональных данных и ознакомлен с условиями <a href="#">Публичной оферты</a> для физических лиц и <a href="#">Правилами Программы лояльности</a>
                                 </div>
                             </div>
                         </div>
@@ -223,9 +442,10 @@
             </div>
         </div>
 
-        @@include('preim-block.html')
+        @@include('about-block.html')
     </div>
     @@include('footer.html')
+    <script src="js/checkout.js"></script>
 </div>
 </body>
 </html>

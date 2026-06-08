@@ -2,4 +2,342 @@
 
 .checkout-page {
     padding: 40px 0 80px;
+
+    @media (max-width: 767px) {
+        padding: 24px 0 48px;
+    }
+}
+
+// ── Sticky aside ────────────────────────────────────────────────────────────
+.checkout-aside {
+    position: sticky;
+    top: 24px;
+
+    .basket__aside-body {
+        border-radius: .5rem;
+    }
+
+    .basket__aside-title {
+        margin-bottom: 1.5rem;
+
+        .title {
+            font-family: var(--second-family);
+            font-weight: 600;
+            font-size: 28px;
+            line-height: 114%;
+            letter-spacing: -0.01em;
+            color: var(--brand-black);
+        }
+
+        .quantity {
+            font-family: var(--font-family);
+            font-weight: 600;
+            font-size: 12px;
+            letter-spacing: 0.11em;
+            text-transform: uppercase;
+            color: var(--t-black-40);
+            margin-top: 4px;
+
+            span { color: var(--t-black-80); }
+        }
+    }
+
+    // Override calc row sizes to match mockup
+    .basket__aside-calc {
+        padding-bottom: 12px;
+        margin-bottom: 12px;
+
+        span:first-child {
+            font-size: 14px;
+            line-height: 143%;
+        }
+
+        span:last-child {
+            font-size: 16px;
+            line-height: 150%;
+        }
+
+        &.total {
+            border-top: 2px solid var(--t-black-10);
+            padding-top: 16px;
+            margin-top: 4px;
+            padding-bottom: 0;
+            margin-bottom: 1.5rem;
+
+            .lsp {
+                font-family: var(--second-family);
+                font-weight: 600;
+                font-size: 28px;
+                line-height: 114%;
+                letter-spacing: -0.01em;
+                color: var(--brand-black);
+            }
+
+            .right {
+                font-family: var(--second-family);
+                font-weight: 600;
+                font-size: 28px;
+                line-height: 114%;
+                letter-spacing: -0.01em;
+                color: var(--brand-black);
+                text-align: right;
+            }
+        }
+
+        // Bonus badge
+        &.big span.right {
+            font-family: var(--font-family);
+            font-weight: 700;
+            font-size: 12px;
+            line-height: 133%;
+            color: var(--halftones-green-1);
+            border-radius: 8px;
+            padding: 4px 8px;
+            background: var(--halftones-green-4);
+            display: flex;
+            align-items: center;
+            gap: 4px;
+
+            svg { flex-shrink: 0; }
+        }
+    }
+}
+
+// ── Full-width row variant ───────────────────────────────────────────────────
+.order__item-row--full {
+    width: 100% !important;
+    flex: none !important;
+}
+
+// ── Filled input state (green border) ───────────────────────────────────────
+.order__item-row input.is-filled {
+    border-color: var(--state-success);
+}
+
+// ── Input with clear button ──────────────────────────────────────────────────
+.order__item-field {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    input {
+        width: 100%;
+        padding-right: 44px;
+    }
+}
+
+.field-clear-btn {
+    position: absolute;
+    right: 14px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    opacity: 0.6;
+    transition: opacity 0.2s;
+
+    &:hover { opacity: 1; }
+}
+
+// ── Delivery type blocks ─────────────────────────────────────────────────────
+// Custom radio circle used inside .order__item-radio.delivery blocks
+.order__item-radio-circle {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    margin-right: 14px;
+    margin-top: 2px;
+
+    i {
+        display: block;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        border: 2px solid var(--t-black-40);
+        position: relative;
+        transition: all 0.2s;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: calc(50% - 6px);
+            left: calc(50% - 6px);
+            width: 12px;
+            height: 12px;
+            background: #fff;
+            border-radius: 50%;
+            opacity: 0;
+        }
+    }
+
+}
+
+// When the block label is active, style the circle
+.order__item-label.block.active > .order__item-radio.delivery .order__item-radio-circle i {
+    background: var(--brand-red);
+    border-color: var(--brand-red);
+
+    &::before { opacity: 1; }
+}
+
+// ── Delivery provider sections (СДЭК, Boxberry, Деловые линии) ──────────────
+.delivery-provider {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background: var(--brand-white);
+    border-radius: .5rem;
+
+    &:last-child { margin-bottom: 0; }
+
+    &__logo {
+        margin-bottom: .75rem;
+        font-size: 0;
+        line-height: normal;
+
+        svg { height: 20px; width: auto; }
+    }
+}
+
+// ── Courier option cards inside label-wrapper ────────────────────────────────
+// Override the 33.33% flex to fit the courier card context
+.delivery-provider .order__item-label-wrapper .order__item-label {
+    flex: 0 0 calc(33.33% - 11px);
+
+    @media (max-width: 900px) {
+        flex: 0 0 calc(50% - 8px);
+    }
+
+    @media (max-width: 550px) {
+        flex: none;
+        width: 100%;
+    }
+}
+
+// Card style for each courier option
+.delivery-provider .order__item-label-radio {
+    padding: 1rem;
+    border-radius: .5rem;
+    background: var(--brand-light);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    border: 2px solid transparent;
+    transition: border-color 0.2s;
+    cursor: pointer;
+
+    .top-radio {
+        position: relative;
+        padding-left: 30px;
+        min-height: 20px;
+
+        i {
+            position: absolute;
+            top: 2px;
+            left: 0;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            border: 2px solid var(--t-black-40);
+            transition: all 0.2s;
+            background: #fff;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: calc(50% - 5px);
+                left: calc(50% - 5px);
+                width: 10px;
+                height: 10px;
+                background: #fff;
+                border-radius: 50%;
+                opacity: 0;
+            }
+        }
+
+        .name {
+            font-family: var(--font-family);
+            font-weight: 400;
+            font-size: 13px;
+            line-height: 130%;
+            color: var(--t-black-60);
+        }
+    }
+
+    .order__item-radio-wrap { margin-top: auto; }
+
+    .order__item-radio-group.end {
+        display: flex;
+        align-items: flex-end;
+        gap: 6px;
+    }
+
+    .order__item-radio-right span {
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 1;
+        color: var(--t-black-60);
+    }
+
+    .order__item-radio-days {
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 143%;
+        color: var(--t-black-40);
+        margin-bottom: 2px;
+    }
+
+    .war-icon {
+        margin-left: auto;
+        background: none;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+    }
+}
+
+// Selected courier card
+.delivery-provider .order__item-label input[type="radio"]:checked + .order__item-label-radio {
+    border-color: var(--brand-red);
+    background: var(--brand-white);
+
+    .top-radio i {
+        background: var(--brand-red);
+        border-color: var(--brand-red);
+
+        &::before { opacity: 1; }
+    }
+
+    .order__item-radio-right span,
+    .order__item-radio-days {
+        font-weight: 700;
+        color: var(--brand-black);
+    }
+}
+
+// ── Fields bottom margin variant ─────────────────────────────────────────────
+.order__item-fields--mb {
+    margin-bottom: 1rem;
+}
+
+// ── Payment label fixes ──────────────────────────────────────────────────────
+// Make payment radio circles work via input:checked selector
+.order__item-labels-payment .order__item-label input[type="radio"]:checked + .order__item-radio.payment {
+    i {
+        background: var(--brand-red);
+        border-color: var(--brand-red);
+
+        &::before { opacity: 1; }
+    }
+}
+
+// Separator between payment options
+.order__item-labels-payment .order__item-label:not(:last-child) {
+    border-bottom: 1px solid var(--t-black-10);
 }
