@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-    // ── "Notify when available" form ──────────────────────────────────────
     const notifyForm = document.querySelector('.notify-form');
 
     if (notifyForm) {
@@ -13,7 +12,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 return;
             }
 
-            // Placeholder: subscribe email via API
             console.log('notify:', emailInput.value);
             this.classList.add('is-submitted');
         });

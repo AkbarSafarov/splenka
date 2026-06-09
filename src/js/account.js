@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-    // ── Account sidebar navigation ────────────────────────────────────────
     const navItems = document.querySelectorAll('.account-nav__item');
     const sections = document.querySelectorAll('.account-section');
 
@@ -21,7 +20,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // ── Order detail expand ───────────────────────────────────────────────
     const orderRows = document.querySelectorAll('.account-order');
 
     orderRows.forEach(function (row) {
@@ -33,13 +31,11 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // ── Profile form save ─────────────────────────────────────────────────
     const profileForm = document.querySelector('.account-profile-form');
 
     if (profileForm) {
         profileForm.addEventListener('submit', function (e) {
             e.preventDefault();
-            // Placeholder: save profile via API
             console.log('profile saved');
         });
     }

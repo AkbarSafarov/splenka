@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-    // ── View toggle (grid / list) ──────────────────────────────────────────
     const viewBtns = document.querySelectorAll('[data-view]');
     const catalogGrid = document.querySelector('.catalog-products');
 
@@ -15,7 +14,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // ── Sort select ───────────────────────────────────────────────────────
     const sortSelect = document.querySelector('[data-sort]');
 
     if (sortSelect) {

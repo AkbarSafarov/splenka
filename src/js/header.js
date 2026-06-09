@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const searchOverlayInput = header.querySelector('.js-search-overlay-input');
     const searchOverlayClear = header.querySelector('.js-search-overlay-clear');
     const searchOverlayEmpty   = header.querySelector('.js-search-overlay-empty');
+    const searchOverlayList    = header.querySelector('.js-search-overlay-list');
     const searchOverlayResults = header.querySelector('.js-search-overlay-results');
     const accountLogin  = header.querySelector('.js-account-login');
     const accountUser   = header.querySelector('.js-account-user');
@@ -49,8 +50,28 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // ── Catalog mega menu ──────────────────────────────────────────────────────
     if (catalogBtn && catalogMenu) {
-        const cats   = catalogMenu.querySelectorAll('.catalog-menu__cat[data-cat]');
-        const panels = catalogMenu.querySelectorAll('.catalog-menu__panel[data-panel]');
+        const cats    = catalogMenu.querySelectorAll('.catalog-menu__cat[data-cat]');
+        const panels  = catalogMenu.querySelectorAll('.catalog-menu__panel[data-panel]');
+        const inner   = catalogMenu.querySelector('.catalog-menu__inner');
+        const content = catalogMenu.querySelector('.catalog-menu__content');
+
+        function isMobile() { return window.innerWidth <= 767; }
+
+        // ── Back button (injected once) ──────────────────────────────────────
+        let backBtn = null;
+        if (content) {
+            backBtn = document.createElement('button');
+            backBtn.type = 'button';
+            backBtn.className = 'catalog-menu__back';
+            backBtn.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M19 12H5M5 12l7 7M5 12l7-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Назад';
+            content.insertBefore(backBtn, content.firstChild);
+
+            backBtn.addEventListener('click', function () {
+                if (inner) inner.classList.remove('panel-open');
+                cats.forEach(function (c) { c.classList.remove('is-active'); });
+                panels.forEach(function (p) { p.hidden = true; p.classList.remove('is-active'); });
+            });
+        }
 
         function activatePanel(catEl) {
             const key = catEl.dataset.cat;
@@ -69,7 +90,21 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         cats.forEach(function (cat) {
-            cat.addEventListener('mouseenter', function () { activatePanel(this); });
+            // Desktop: hover switches panel
+            cat.addEventListener('mouseenter', function () {
+                if (!isMobile()) activatePanel(this);
+            });
+
+            // Mobile: click on arrow → slide in panel from right
+            cat.addEventListener('click', function (e) {
+                if (!isMobile()) return;
+                const arrow = cat.querySelector('.catalog-menu__cat-arrow');
+                if (!arrow || !e.target.closest('.catalog-menu__cat-arrow')) return;
+                e.preventDefault();
+                activatePanel(cat);
+                if (inner) inner.classList.add('panel-open');
+                if (catalogMenu) catalogMenu.scrollTop = 0;
+            });
         });
 
         catalogBtn.addEventListener('click', function () {
@@ -80,49 +115,26 @@ document.addEventListener('DOMContentLoaded', function () {
                 show(backdrop);
                 catalogBtn.classList.add('is-active');
                 catalogBtn.setAttribute('aria-expanded', 'true');
-                const active = catalogMenu.querySelector('.catalog-menu__cat.is-active') || cats[0];
-                if (active) activatePanel(active);
+
+                if (!isMobile()) {
+                    const active = catalogMenu.querySelector('.catalog-menu__cat.is-active') || cats[0];
+                    if (active) activatePanel(active);
+                } else {
+                    // reset to categories list
+                    if (inner) inner.classList.remove('panel-open');
+                    panels.forEach(function (p) { p.hidden = true; p.classList.remove('is-active'); });
+                    cats.forEach(function (c) { c.classList.remove('is-active'); });
+                }
             }
         });
     }
 
-    // ── Inline search ──────────────────────────────────────────────────────────
-    if (searchToggle && searchWrap) {
+    // ── Search icon → open overlay directly ───────────────────────────────────
+    if (searchToggle) {
         searchToggle.addEventListener('click', function () {
-            const isOpen = searchWrap.classList.contains('is-open');
+            const isOpen = searchOverlay && !searchOverlay.hidden;
             closeAll();
-            if (!isOpen) {
-                searchWrap.classList.add('is-open');
-                searchToggle.classList.add('is-active');
-                searchToggle.setAttribute('aria-expanded', 'true');
-                show(backdrop);
-                setTimeout(function () { if (searchInput) searchInput.focus(); }, 260);
-            }
-        });
-    }
-
-    if (searchInput && searchDrop) {
-        searchInput.addEventListener('input', function () {
-            if (this.value.trim().length >= 2) {
-                show(searchDrop);
-            } else {
-                hide(searchDrop);
-            }
-        });
-
-        // Enter → open full overlay
-        searchInput.addEventListener('keydown', function (e) {
-            if (e.key === 'Enter') {
-                e.preventDefault();
-                openSearchOverlay(this.value.trim());
-            }
-        });
-    }
-
-    if (searchWrap) {
-        searchWrap.addEventListener('submit', function (e) {
-            e.preventDefault();
-            openSearchOverlay(searchInput ? searchInput.value.trim() : '');
+            if (!isOpen) openSearchOverlay('');
         });
     }
 
@@ -143,10 +155,12 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function updateOverlayState(val) {
-        const hasQuery = val.length >= 2;
-        if (searchOverlayEmpty)   searchOverlayEmpty.hidden   = hasQuery;
-        if (searchOverlayResults) searchOverlayResults.hidden = !hasQuery;
-        if (searchOverlayClear)   searchOverlayClear.hidden   = !val.length;
+        const len = val.length;
+        // empty → show categories; 2-3 chars → list; 4+ → columns
+        if (searchOverlayEmpty)   searchOverlayEmpty.hidden   = len >= 2;
+        if (searchOverlayList)    searchOverlayList.hidden    = len < 2 || len >= 4;
+        if (searchOverlayResults) searchOverlayResults.hidden = len < 4;
+        if (searchOverlayClear)   searchOverlayClear.hidden   = !len;
     }
 
     if (searchOverlayInput) {
