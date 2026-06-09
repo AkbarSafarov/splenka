@@ -15,11 +15,11 @@
     &__title {
         font-family: var(--third-family);
         font-weight: 400;
-        font-size: 32px;
+        font-size: 28px;
         line-height: 113%;
         letter-spacing: -0.03em;
         color: var(--t-black-80);
-        margin-bottom: 0.5rem;
+        margin-bottom: 1.5rem;
     }
     &__step {
         // content: "1";
@@ -46,11 +46,16 @@
     display: flex;
     overflow: hidden;
     background: #fff;
-    border-radius: 8px;
-    border: 2px solid var(--t-black-10);
-    box-shadow: 0 0 16px 0 rgba(76, 76, 71, 0.16);
-    padding: 1rem;
+    border-radius: 16px;
+    border: 1px solid var(--t-black-20);
+    padding: 1.5rem;
     gap: 1.5rem;
+
+    &:hover {
+        box-shadow: 0 0 16px 0 rgba(76, 76, 71, 0.16);
+        background: var(--brand-white);
+    }
+
     &__img {
         height: 120px;
         aspect-ratio: 1;
@@ -75,6 +80,7 @@
         display: flex;
         justify-content: space-between;
         gap: 24px;
+        align-items: start;
 
         @media all and (max-width: 1100px) {
             flex-wrap: wrap;
@@ -104,9 +110,23 @@
         white-space: nowrap;
         line-height: 1;
         text-align: right;
+        font-size: 0;
+        gap: 4px 8px;
+        display: flex;
+        align-items: start;
+        justify-content: end;
+        flex-wrap: wrap;
 
         &--final {
             color: var(--v-yellow);
+        }
+
+        .sale-price {
+            font-family: var(--font-family);
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 133%;
+            color: var(--brand-gold);
         }
 
         .current {
@@ -115,7 +135,7 @@
             font-size: 24px;
             line-height: 133%;
             color: var(--brand-black);
-            margin-bottom: 5px;
+            width: 100%;
         }
 
         .old {
@@ -133,13 +153,13 @@
     }
 
     &__title {
-        flex: 1 1 auto;
-        font-family: var(--second-family);
-        font-weight: 600;
+        font-family: var(--third-family);
+        font-weight: 400;
         font-size: 28px;
         line-height: 114%;
         letter-spacing: -0.01em;
         color: var(--t-black-80);
+
         @media all and (max-width: 1100px) {
             font-size: 20px;
         }
@@ -148,8 +168,8 @@
     &__desc {
         font-family: var(--font-family);
         font-weight: 400;
-        font-size: 12px;
-        line-height: 133%;
+        font-size: 14px;
+        line-height: 143%;
         color: var(--t-black-60);
         margin-top: 0.5rem;
     }
@@ -190,7 +210,7 @@
     }
     &__quantity {
         border: 2px solid var(--t-black-80);
-        border-radius: 8px;
+        border-radius: 24px;
         width: 136px;
         display: flex;
         align-items: center;
@@ -207,6 +227,7 @@
             outline: none;
             padding: 0;
             width: 100%;
+            height: auto;
             text-align: center;
         }
         button {
@@ -269,11 +290,11 @@
 
 .cart-page-wrapper {
     margin-top: 40px;
-    margin-bottom: 112px;
+    margin-bottom: 32px;
 
     @media all and (max-width: 991px) {
         margin-top: 24px;
-        margin-bottom: 32px;
+        margin-bottom: 24px;
     }
 
     .basket__box {
@@ -284,9 +305,10 @@
         }
         &.services-container {
             background: #fff;
-            padding: 2rem;
-            border-radius: .5rem;
+            border-radius: 32px 32px 32px 0;
+            padding: 32px;
             margin-top: 0;
+
             @media all and (max-width: 1100px) {
                 padding: 1rem;
             }
@@ -507,7 +529,7 @@
             align-items: center;
             gap: 10px;
             &.lime {
-                color: var(--state-success) !important;
+                color: var(--brand-gold) !important;
             }
         }
 
@@ -562,11 +584,12 @@
                 font-size: 12px;
                 line-height: 133%;
                 text-align: right;
-                color: var(--halftones-purple-1);
+                color: var(--halftones-green-1);
                 border-radius: 8px;
                 padding: 4px 8px;
-                background: var(--halftones-purple-4);
+                background: var(--halftones-green-4);
                 gap: 4px;
+
                 span {
                     font-size: 12px;
                 }
@@ -576,8 +599,8 @@
         &.total {
 
             .lsp {
-                font-family: var(--second-family);
-                font-weight: 600;
+                font-family: var(--third-family);
+                font-weight: 400;
                 font-size: 28px;
                 line-height: 114%;
                 letter-spacing: -0.01em;
@@ -585,13 +608,13 @@
             }
 
             .right {
-                font-family: var(--second-family);
-                font-weight: 600;
-                font-size: 28px;
-                line-height: 114%;
-                letter-spacing: -0.01em;
-                color: var(--brand-black);
+                font-family: var(--third-family);
+                font-weight: 400;
+                font-size: 32px;
+                line-height: 113%;
+                letter-spacing: -0.03em;
                 text-align: right;
+                color: var(--brand-black);
             }
         }
     }
@@ -684,7 +707,7 @@
             -ms-flex: 1 1 auto;
             flex: 1 1 auto;
             border: 2px solid var(--t-black-40);
-            border-radius: 8px;
+            border-radius: 24px;
             width: 100%;
             padding: 12px 16px;
             outline: none;
@@ -705,17 +728,13 @@
             line-height: 100%;
             letter-spacing: 0.12em;
             text-transform: uppercase;
-            color: var(--t-black-80);
-            transition: background 0.2s;
-            background: none;
-            border: 2px solid var(--t-black-80);
-            border-radius: 8px;
-            padding: 12px 24px;
-            &:hover {
-                background: var(--brand-black);
-                color: var(--brand-white);
-            }
+
         }
+    }
+
+    .btn.btn-dark {
+        width: 100%;
+        justify-content: space-between;
     }
 }
 
@@ -733,7 +752,7 @@
     -webkit-box-align: first baseline;
     -ms-flex-align: first baseline;
     align-items: first baseline;
-    border-radius: 8px;
+    border-radius: 1rem;
 
     @media all and (max-width: 1024px) {
         padding: 10px;
@@ -842,8 +861,8 @@
 
     .checkbox-label {
         position: absolute;
-        top: 0;
-        left: 0;
+        top: -.5rem;
+        left: -.5rem;
     }
 }
 
@@ -851,7 +870,7 @@
     position: relative;
     padding: 1rem;
     border: 2px solid var(--t-black-10);
-    border-radius: 8px;
+    border-radius: 16px;
     margin-bottom: 1rem;
 
     @media all and (max-width: 1024px) {
@@ -860,6 +879,19 @@
 
     &:last-child {
         margin-bottom: 0;
+    }
+
+    &.is-active {
+        border-color: transparent;
+        background: var(--t-gold-5);
+
+        .section-icon {
+            background: var(--t-gold-10);
+
+            svg path { fill: var(--brand-gold); }
+        }
+
+        .section-title { color: var(--brand-black); }
     }
 
     .section-header {
@@ -883,12 +915,12 @@
         width: 48px;
         height: 48px;
         min-width: 48px;
-        border-radius: 8px;
+        border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
         font-size: 20px;
-        background: var(--brand-ivory);
+        background: var(--t-black-5);
 
         @media all and (max-width: 767px) {
             flex: 0 0 30px;
@@ -931,14 +963,15 @@
     }
 
     .service-item {
-        border-radius: 8px;
+        border-radius: 16px;
         padding: 1rem;
         margin-bottom: 1rem;
         display: flex;
         align-items: center;
         justify-content: space-between;
         transition: background 0.2s;
-        border: 2px solid var(--t-black-10);
+        background: var(--brand-white);
+        border: 1px solid transparent;
 
         @media all and (max-width: 767px) {
             padding: 10px;
@@ -951,7 +984,7 @@
     }
 
     .service-item:hover {
-        border-color: #525252;
+        border-color: var(--brand-gold);
     }
 
     .service-item-left {
@@ -978,7 +1011,7 @@
     .service-price {
         font-family: var(--font-family);
         font-weight: 400;
-        font-size: 1rem;
+        font-size: 16px;
         line-height: 150%;
         color: var(--brand-black);
         white-space: nowrap;
@@ -1056,7 +1089,7 @@
 
 .order__item {
     background: var(--brand-white);
-    border-radius: .5rem;
+    border-radius: 32px 32px 32px 0;
     padding: 2rem 2rem 40px;
     margin-bottom: 1.5rem;
     position: relative;
@@ -1252,8 +1285,7 @@
             transition: all 0.3s;
             border: 2px solid var(--brand-light);
             &.active {
-                border-color: var(--t-black-80);
-                background: var(--brand-white);
+                background: var(--t-gold-5);
             }
         }
 
@@ -1278,6 +1310,8 @@
 
             .order__item-label-body {
                 display: block;
+                background: none;
+                border: none;
             }
         }
 
@@ -1320,6 +1354,8 @@
                     width: 100%;
                     display: flex;
                     flex-direction: column;
+                    border-color: var(--t-black-20);
+
                     .top-radio {
                         position: relative;
                         margin-bottom: 1rem;
@@ -1327,7 +1363,6 @@
                     }
 
                     .name {
-                        padding-left: 35px;
                         display: flex;
                         flex-wrap: wrap;
                         gap: 12px;
@@ -1590,13 +1625,13 @@
             font-weight: 500;
 
             &.delivery {
-                border-color: #ffc107;
-                background-color: rgba(255, 193, 7, 0.03);
+                border-color: transparent;
+                background: none;
                 color: #ffffff;
 
                 &.black {
-                    border-color: #ffc107;
-                    background-color: rgba(255, 193, 7, 0.05);
+                    border-color: transparent;
+                    background: none;
                     color: #ffffff;
                 }
             }
@@ -1888,27 +1923,28 @@
     font-size: 14px;
     line-height: 143%;
     color: var(--t-black-80);
+
     &.preorder {
         .instock__scale {
-            background: #D94800;
+            border-color:  var(--state-error);
         }
     }
     &.instock--not-available {
         .instock__scale {
-            background: var(--t-black-20);
+            border-color:  var(--t-black-20);
         }
     }
     &.instock--little {
         .instock__scale {
-            background: #E68600;
+            border-color: var(--state-warning);
         }
     }
     .instock__scale {
-        width: 8px;
-        height: 8px;
+        width: 12px;
+        height: 12px;
         display: block;
-        border-radius: 100%;
-        background: #75992E;
+        border-radius: 50%;
+        border: 2px solid  var(--state-success);
     }
 }
 

@@ -1,4 +1,4 @@
-// ── Header ─────────────────────────────────────────────────────────────────
+﻿// ── Header ─────────────────────────────────────────────────────────────────
 // Bootstrap handles: .btn variants, .form-control, flex utilities, spacing.
 // This file adds only what Bootstrap can't — layout tokens, animations, drops.
 
@@ -93,10 +93,24 @@ a.header__preline-link {
 // ── Catalog btn — pill override ──────────────────────────────────────────────
 .header__catalog-btn {
 
+    letter-spacing: 0.06em;
+
+
+
+    &:hover {
+        background: var(--brand-gold);
+        border-color: var(--brand-gold);
+        color: var(--brand-white);
+
+        svg path { fill: var(--brand-white); }
+    }
+
     &.is-active {
-        color: var(--bs-btn-hover-color);
-        background-color: var(--bs-btn-hover-bg);
-        border-color: var(--bs-btn-hover-border-color);
+        background: var(--brand-gold);
+        border-color: var(--brand-gold);
+        color: var(--brand-white);
+
+        svg path { fill: var(--brand-white); }
     }
 }
 
@@ -208,7 +222,9 @@ a.header__preline-link {
     color: var(--brand-black); cursor: pointer;
     border-radius: 50%;
     transition: background var(--h-t), color var(--h-t);
-    &:hover    { background: var(--brand-ice); }
+    &:hover    {
+        color: var(--brand-gold);
+    }
     &.is-active { color: var(--brand-gold); }
 }
 
@@ -237,45 +253,78 @@ a.header__preline-link {
 }
 
 .catalog-menu__inner {
-    display: grid; grid-template-columns: 220px 1fr;
-    min-height: 440px; padding: 24px 0;
+    display: grid;
+    grid-template-columns: 480px 1fr;
+    min-height: 500px;
+    padding: 32px 0;
 }
 
 .catalog-menu__cats {
-    display: flex; flex-direction: column; gap: 2px;
-    padding-right: 16px; border-right: var(--h-border);
+    display: flex; flex-direction: column; gap: 0;
+    padding-right: 24px;
 }
 
 .catalog-menu__cat {
-    display: flex; align-items: center; gap: 12px;
-    padding: 10px 12px; border-radius: 8px;
-    text-decoration: none; color: var(--t-black-70); font-size: 14px;
-    transition: background var(--h-t), color var(--h-t);
-    &:hover, &.is-active { background: var(--brand-ice); color: var(--brand-black); }
-    &.is-active { font-weight: 600; }
+    display: flex; align-items: center; gap: 16px;
+    padding: 12px 0; border-radius: 0;
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: var(--brand-black);
+    transition: color var(--h-t);
+
+    &:hover {
+        background: none;
+        color: var(--brand-gold);
+
+        .catalog-menu__cat-icon { color: var(--brand-gold); }
+    }
+
+    &.is-active {
+        background: none;
+        color: var(--brand-gold);
+
+        .catalog-menu__cat-icon { color: var(--brand-gold); }
+        .catalog-menu__cat-arrow { opacity: 1; }
+    }
 }
 
-.catalog-menu__cat-icon { flex-shrink: 0; width: 22px; height: 22px; display: flex; align-items: center; color: var(--brand-black); }
+.catalog-menu__cat-icon {
+    flex-shrink: 0; width: 32px; height: 32px;
+    display: flex; align-items: center;
+    color: var(--t-black-50);
+    transition: color var(--h-t);
+}
+
 .catalog-menu__cat-name { flex: 1; }
-.catalog-menu__cat-arrow { flex-shrink: 0; color: var(--t-black-40); }
-.catalog-menu__content { padding-left: 32px; }
+
+.catalog-menu__cat-arrow {
+    flex-shrink: 0;
+    color: var(--brand-gold);
+    opacity: 0;
+    transition: opacity var(--h-t);
+}
+
+.catalog-menu__content { padding-left: 40px; }
 .catalog-menu__panel { display: none; &.is-active { display: block; } }
 
 .catalog-menu__panel-cols {
-    display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-bottom: 28px;
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-bottom: 32px;
 }
 
 .catalog-menu__panel-head {
-    font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
-    color: var(--t-black-40); margin: 0 0 12px;
+    font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--t-black-40); margin: 0 0 16px;
 }
 
 .catalog-menu__panel-list {
-    list-style: none; padding: 0; margin: 0 0 20px;
-    display: flex; flex-direction: column; gap: 2px;
+    list-style: none; padding: 0; margin: 0;
+    display: flex; flex-direction: column; gap: 0;
+
     a {
-        display: block; padding: 4px 0;
-        font-size: 14px; color: var(--t-black-70); text-decoration: none;
+        display: block; padding: 7px 0;
+        font-size: 15px; color: var(--t-black-70); text-decoration: none;
         transition: color var(--h-t);
         &:hover { color: var(--brand-gold); }
     }
@@ -283,18 +332,38 @@ a.header__preline-link {
 
 .catalog-menu__promo-banner {
     display: flex; align-items: flex-end;
-    height: 180px; border-radius: 12px;
+    height: 248px; border-radius: 20px;
     overflow: hidden; background-size: cover; background-position: center;
     text-decoration: none; position: relative;
-    &::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(26,51,45,.7) 0%, transparent 60%); }
+    transition: opacity var(--h-t);
+
+    &::before {
+        content: ''; position: absolute; inset: 0;
+        background: linear-gradient(to top, rgba(26,51,45,.75) 0%, rgba(26,51,45,.1) 60%, transparent 100%);
+    }
+
+    &:hover { opacity: 0.92; }
 }
 
-.catalog-menu__promo-body { position: relative; padding: 20px 24px; display: flex; flex-direction: column; gap: 8px; }
-.catalog-menu__promo-title { font-family: var(--second-family); font-size: 18px; font-weight: 600; color: var(--brand-white); line-height: 1.3; }
+.catalog-menu__promo-body {
+    position: relative; padding: 28px 32px;
+    display: flex; flex-direction: column; gap: 10px;
+}
+
+.catalog-menu__promo-title {
+    font-family: var(--third-family);
+    font-size: 28px; font-weight: 400;
+    color: var(--brand-white); line-height: 1.1;
+    letter-spacing: -0.02em;
+}
+
 .catalog-menu__promo-link {
-    display: flex; align-items: center; gap: 6px; font-size: 13px; color: rgba(255,255,255,.7);
+    display: flex; align-items: center; gap: 8px;
+    font-size: 14px; color: rgba(255,255,255,.8);
+    text-decoration: none;
+
     svg { transition: transform var(--h-t); }
-    .catalog-menu__promo-banner:hover & svg { transform: translateX(3px); }
+    &:hover svg { transform: translateX(4px); }
 }
 
 // ── Full-page search overlay (Search drop.jpg) ────────────────────────────────
@@ -361,25 +430,39 @@ a.header__preline-link {
 
 .search-overlay__cats-title {
     font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
-    color: var(--t-black-40); margin: 0 0 20px;
+    color: var(--t-black-40); margin: 0 0 24px;
 }
 
 .search-overlay__cats-grid {
-    display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px;
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px;
 }
 
 .search-overlay__cat {
     display: flex; align-items: center; gap: 16px;
-    padding: 16px 20px; border-radius: 8px;
-    text-decoration: none; color: var(--t-black-70); font-size: 15px;
-    transition: background var(--h-t), color var(--h-t);
-    &:hover { background: var(--brand-ice); color: var(--brand-black); }
+    padding: 14px 16px; border-radius: 10px;
+    text-decoration: none; color: var(--t-black-70); font-size: 16px;
+    transition: color var(--h-t);
+
+    &:hover {
+        background: none;
+        color: var(--brand-gold);
+
+        .search-overlay__cat-icon { color: var(--brand-gold); }
+    }
 }
 
-.search-overlay__cat-icon { flex-shrink: 0; color: var(--brand-black); }
+.search-overlay__cat-icon {
+    flex-shrink: 0;
+    width: 32px; height: 32px;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--t-black-50);
+    transition: color var(--h-t);
+
+    svg { width: 28px; height: 28px; }
+}
 
 .search-overlay__results {
-    display: grid; grid-template-columns: 280px 1fr; gap: 60px;
+    display: grid; grid-template-columns: 260px 1fr; gap: 64px;
     &[hidden] { display: none; }
 }
 
@@ -389,7 +472,7 @@ a.header__preline-link {
 }
 
 .search-overlay__result-cat {
-    display: block; padding: 12px 0;
+    display: block; padding: 14px 0;
     font-size: 15px; color: var(--brand-black); text-decoration: none;
     border-bottom: var(--h-border);
     transition: color var(--h-t);
@@ -398,28 +481,41 @@ a.header__preline-link {
 }
 
 .search-overlay__result-product {
-    display: flex; align-items: flex-start; gap: 16px;
+    display: flex; align-items: center; gap: 16px;
     padding: 14px 0; text-decoration: none;
     border-bottom: var(--h-border);
     transition: opacity var(--h-t);
-    &:hover { opacity: 0.72; }
+    &:hover { opacity: 0.75; }
 }
 
 .search-overlay__result-img {
-    flex-shrink: 0; width: 48px; height: 48px;
+    flex-shrink: 0; width: 56px; height: 56px;
     img { width: 100%; height: 100%; object-fit: contain; }
 }
 
-.search-overlay__result-info { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.search-overlay__result-info {
+    display: flex; align-items: center;
+    gap: 16px; min-width: 0; flex: 1;
+}
 
 .search-overlay__result-name {
-    font-size: 14px; color: var(--t-black-80); line-height: 1.35;
+    flex: 1; min-width: 0;
+    font-size: 15px; color: var(--t-black-80); line-height: 1.4;
     mark { background: none; font-weight: 700; color: var(--brand-black); }
 }
 
-.search-overlay__result-prices { display: flex; align-items: baseline; gap: 8px; }
-.search-overlay__result-price  { font-size: 14px; font-weight: 600; color: var(--brand-black); }
-.search-overlay__result-price-old { font-size: 12px; color: var(--t-black-40); text-decoration: line-through; }
+.search-overlay__result-prices {
+    flex-shrink: 0;
+    display: flex; flex-direction: column; align-items: flex-end; gap: 2px;
+}
+
+.search-overlay__result-price {
+    font-size: 16px; font-weight: 600; color: var(--brand-black); white-space: nowrap;
+}
+
+.search-overlay__result-price-old {
+    font-size: 12px; color: var(--t-black-40); text-decoration: line-through; white-space: nowrap;
+}
 
 // ── Account dropdown ──────────────────────────────────────────────────────────
 .header__account-drop {
