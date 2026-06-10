@@ -1,6 +1,6 @@
 # Splenka
 
-Интернет-магазин сантехники премиум-класса. Верстка на Gulp + SCSS + Bootstrap 5.
+Верстка на Gulp + SCSS + Bootstrap 5.
 
 ---
 
@@ -40,7 +40,6 @@ npm run build
 | `card-no.html` | Карточка товара — Уже продано |
 | `card-states.html` | Карточка товара — Состояния элементов |
 | `cart.html` | Корзина |
-| `cart-2.html` | Альтернативная зона чека |
 | `checkout.html` | Оформление заказа |
 | `order.html` | Заказ принят |
 | `account.html` | Мой кабинет |
@@ -60,10 +59,6 @@ splenka/
 │
 └── src/
     ├── files/                          # Изображения (баннеры, товары)
-    │   ├── banner.jpg / banner-1..4.jpg
-    │   ├── banner-c1.jpg / banner-c2.jpg
-    │   ├── main-slider.jpg
-    │   └── product.png / product2.png / product3.png
     │
     ├── fonts/                          # Локальные шрифты Forma DJR Cyrillic
     │
@@ -73,20 +68,32 @@ splenka/
     │   │   ├── header.html
     │   │   ├── footer.html
     │   │   ├── path.html               # Хлебные крошки
+    │   │   ├── slider-main.html        # Главный баннер-слайдер
+    │   │   ├── banner-section.html     # Промо-баннеры (варианты 1–7)
+    │   │   ├── new.html                # Секция «Новинки»
+    │   │   ├── hit.html                # Секция «Хиты»
+    │   │   ├── like.html               # Секция «Вам понравится»
+    │   │   ├── similar.html            # Секция «Похожие товары»
+    │   │   ├── category.html           # Сетка категорий
+    │   │   ├── collection.html         # Блок коллекций
+    │   │   ├── about-block.html        # О компании
+    │   │   ├── bottom-block.html       # Нижний информационный блок
     │   │   ├── preim-block.html        # Блок преимуществ
     │   │   ├── filter-block.html       # Фильтр каталога
+    │   │   ├── arrows.html             # Стрелки навигации слайдера
     │   │   ├── product.html            # Карточка товара (вариант 1 — default)
-    │   │   ├── product2.html           # Карточка товара (вариант 2 — hover)
+    │   │   ├── product2.html           # Карточка товара (вариант 2 — со скидкой)
     │   │   ├── product3.html           # Карточка товара (вариант 3 — в корзине)
-    │   │   └── product4.html           # Карточка товара (вариант 4 — в сравнении)
+    │   │   └── product4.html           # Карточка товара (вариант 4 — популярный)
     │   │
     │   └── pages/                      # Страницы (см. таблицу выше)
     │
     ├── js/
-    │   ├── main.js                     # Общий: accordion, фильтры, меню каталога, галерея
+    │   ├── main.js                     # Общий: accordion, фильтры, галерея, UI-компоненты
+    │   ├── header.js                   # Шапка: каталог-меню, поиск, корзина, аккаунт
     │   ├── sliders-config.js           # Конфигурация Swiper-слайдеров
-    │   ├── cart.js                     # Логика корзины
     │   ├── feature.js                  # Общие UI-фичи
+    │   ├── cart.js                     # Логика корзины
     │   ├── catalog.js                  # Каталог: вид, сортировка, мобильный фильтр
     │   ├── card.js                     # Карточка: табы, степпер кол-ва, sticky CTA
     │   ├── card-no.js                  # Карточка (продано): форма уведомления
@@ -98,12 +105,25 @@ splenka/
     ├── styles/
     │   ├── style.scss                  # Точка входа — импортирует все модули
     │   │
-    │   ├── components/
+    │   ├── components/                 # Глобальные UI-примитивы
     │   │   ├── _colors.scss            # CSS custom properties: цвета, полутона, состояния
-    │   │   └── _fonts.scss             # @font-face (Forma DJR) + CSS-переменные шрифтов
+    │   │   ├── _fonts.scss             # @font-face (Forma DJR) + CSS-переменные шрифтов
+    │   │   ├── _buttons.scss           # Стили кнопок
+    │   │   └── _forms.scss             # Стили форм и полей ввода
     │   │
-    │   ├── blocks/
-    │   │   └── _icons.scss             # Иконки
+    │   ├── blocks/                     # Стили переиспользуемых блоков
+    │   │   ├── _header.scss
+    │   │   ├── _footer.scss
+    │   │   ├── _main-slider.scss
+    │   │   ├── _icons.scss
+    │   │   ├── about-block.scss
+    │   │   ├── banner-section.scss
+    │   │   ├── bottom-block.scss
+    │   │   ├── category.scss
+    │   │   ├── collection.scss
+    │   │   ├── filter.scss
+    │   │   ├── hit.scss
+    │   │   └── product-item.scss
     │   │
     │   ├── vendor/
     │   │   ├── _bootstrap-config.scss  # Bootstrap 5 SCSS + переопределение переменных проекта

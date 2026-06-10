@@ -1,7 +1,7 @@
 {
-  "name": "rango-site",
+  "name": "splenka-site",
   "version": "1.0.0",
-  "description": "Rango - premium bathroom fixtures e-commerce",
+  "description": "Splenka - premium bathroom fixtures e-commerce",
   "type": "module",
   "scripts": {
     "dev": "gulp",
