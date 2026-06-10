@@ -1,8 +1,5 @@
 ﻿// ── Header ─────────────────────────────────────────────────────────────────
-// Bootstrap handles: .btn variants, .form-control, flex utilities, spacing.
-// This file adds only what Bootstrap can't — layout tokens, animations, drops.
 
-// ── Design tokens ───────────────────────────────────────────────────────────
 .header {
     --h-preline-h:  36px;
     --h-main-h:     64px;
@@ -23,7 +20,6 @@
     }
 }
 
-// ── Preline ─────────────────────────────────────────────────────────────────
 .header__preline {
     .container-xl { height: 100%; }
 }
@@ -76,7 +72,6 @@ a.header__preline-link {
     &:hover { color: var(--brand-gold); }
 }
 
-// ── Main bar ─────────────────────────────────────────────────────────────────
 .header__main {
     padding-top: 10px;
     padding-bottom: 16px;
@@ -90,11 +85,9 @@ a.header__preline-link {
     text-decoration: none;
 }
 
-// ── Catalog btn — pill override ──────────────────────────────────────────────
 .header__catalog-btn {
 
     letter-spacing: 0.06em;
-
 
 
     &:hover {
@@ -153,7 +146,6 @@ a.header__preline-link {
     &:hover { color: var(--brand-gold); }
 }
 
-// ── Inline dropdown card ──────────────────────────────────────────────────────
 .header__search-drop {
     position: absolute;
     top: calc(100% + 6px);
@@ -221,7 +213,6 @@ a.header__preline-link {
     position: relative;
 }
 
-// ── Action icons ─────────────────────────────────────────────────────────────
 .header__action {
     position: relative;
     width: 32px; height: 32px;
@@ -252,7 +243,6 @@ a.header__preline-link {
     border-radius: 10px; text-align: center; pointer-events: none;
 }
 
-// ── Catalog mega menu ─────────────────────────────────────────────────────────
 .header__catalog-menu {
     position: absolute;
     top: 100%;
@@ -397,7 +387,6 @@ a.header__preline-link {
     &:hover svg { transform: translateX(4px); }
 }
 
-// ── Full-page search overlay (Search drop.jpg) ────────────────────────────────
 .header__search-overlay {
     position: fixed;
     top: calc(var(--h-preline-h) + var(--h-main-h));
@@ -686,7 +675,6 @@ a.header__preline-link {
     white-space: nowrap;
 }
 
-// ── Account dropdown
 .header__account-drop {
     position: absolute;
     top: calc(100% + 8px);
@@ -864,10 +852,8 @@ a.header__preline-link {
     line-height: 100%;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--brand-white);
 }
 
-// ── Cart dropdown ─────────────────────────────────────────────────────────────
 .header__cart-drop {
     position: absolute;
     top: calc(100% + 8px);
@@ -941,12 +927,10 @@ a.header__preline-link {
 
 .cart-drop__cart-btn {  }
 
-// ── Backdrop ──────────────────────────────────────────────────────────────────
 .header__backdrop {
     display: none;
 }
 
-// ── Responsive ───────────────────────────────────────────────────────────────
 
 @media all and (max-width: 1200px) {
     .catalog-menu__inner {
@@ -968,7 +952,6 @@ a.header__preline-link {
 
     .header__actions { gap: 16px; }
 
-    // ── Catalog menu tablet ─────────────────────────────────────────────────
     .header__catalog-menu {
         position: fixed;
         top: calc(var(--h-main-h) + 10px);
@@ -1002,6 +985,10 @@ a.header__preline-link {
     .catalog-menu__promo-banner { height: 160px; border-radius: 16px; }
 }
 
+.catalog-menu__back {
+    display: none;
+}
+
 @media all and (max-width: 767px) {
     .header__logo { flex: 0 0 140px; }
 
@@ -1011,7 +998,6 @@ a.header__preline-link {
 
     .header__action { width: 40px; height: 40px; }
 
-    // ── Catalog menu mobile: full-screen, only categories ───────────────────
     .header__catalog-menu {
         top: calc(var(--h-main-h));
         left: 0; right: 0; bottom: 0;
@@ -1090,7 +1076,6 @@ a.header__preline-link {
         svg { flex-shrink: 0; }
     }
 
-    // ── Search overlay ──────────────────────────────────────────────────────
     .search-overlay__input { font-size: 20px; height: 44px; }
 
     .search-overlay__cats-grid { grid-template-columns: repeat(2, 1fr); }

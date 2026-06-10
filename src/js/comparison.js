@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-    // ── Remove product from comparison ────────────────────────────────────
     const removeButtons = document.querySelectorAll('[data-compare-remove]');
 
     removeButtons.forEach(function (btn) {
@@ -10,7 +9,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
             const colIndex = Array.from(col.parentElement.children).indexOf(col);
 
-            // Remove matching cells in each row
             document.querySelectorAll('.comparison-table__row').forEach(function (row) {
                 const cells = row.querySelectorAll('[data-compare-col]');
                 if (cells[colIndex]) cells[colIndex].remove();
@@ -18,7 +16,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // ── Show only differences ─────────────────────────────────────────────
     const diffToggle = document.querySelector('[data-compare-diff]');
 
     if (diffToggle) {
@@ -34,7 +31,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // ── Sticky header scroll sync ─────────────────────────────────────────
     const tableWrapper = document.querySelector('.comparison-table-wrapper');
 
     if (tableWrapper) {

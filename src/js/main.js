@@ -1,12 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
 
-    const body = document.body;
-    const html = document.documentElement;
-    const overflowHidden = 'oveflowHidden';
-    const menuBurger = document.querySelector('.menu_burger');
-    const header = document.querySelector('.header');
-
-    
     function updateStickerHeight() {
         const header = document.querySelector('.header');
         if (header) {
@@ -248,72 +241,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
     accordion();
     showCheckbox();
-    catalogMenu();
-
-    function catalogMenu() {
-        const btn = document.querySelector('.catalog_btn');
-        const menu = document.getElementById('catalogMenu');
-        if (!btn || !menu) return;
-
-        // Create backdrop
-        const backdrop = document.createElement('div');
-        backdrop.className = 'catalog-menu-backdrop';
-        document.body.appendChild(backdrop);
-
-        function open() {
-            menu.classList.add('is-open');
-            backdrop.classList.add('is-open');
-            btn.classList.add('is-active');
-        }
-
-        function close() {
-            menu.classList.remove('is-open');
-            backdrop.classList.remove('is-open');
-            btn.classList.remove('is-active');
-        }
-
-        function toggle() {
-            menu.classList.contains('is-open') ? close() : open();
-        }
-
-        btn.addEventListener('click', function(e) {
-            e.stopPropagation();
-            toggle();
-        });
-
-        backdrop.addEventListener('click', close);
-
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') close();
-        });
-
-        // Category hover: activate panel
-        const cats = menu.querySelectorAll('.catalog-menu__cat[data-cat]');
-        const panels = menu.querySelectorAll('.catalog-menu__panel[data-panel]');
-
-        function activateCat(catEl) {
-            const cat = catEl.dataset.cat;
-            cats.forEach(c => c.classList.remove('is-active'));
-            panels.forEach(p => p.classList.remove('is-active'));
-            catEl.classList.add('is-active');
-            const panel = menu.querySelector(`.catalog-menu__panel[data-panel="${cat}"]`);
-            if (panel) panel.classList.add('is-active');
-        }
-
-        cats.forEach(cat => {
-            cat.addEventListener('mouseenter', function() {
-                activateCat(this);
-            });
-        });
-
-        // Activate "faucets" by default on open
-        btn.addEventListener('click', function() {
-            if (menu.classList.contains('is-open')) {
-                const defaultCat = menu.querySelector('.catalog-menu__cat[data-cat="faucets"]');
-                if (defaultCat) activateCat(defaultCat);
-            }
-        });
-    }
 
     const cardGallery = document.querySelector('.gallery-thumbs');
 

@@ -1,6 +1,5 @@
 <header class="header">
 
-    <!-- ── Preline ─────────────────────────────────────────────────────────── -->
     <div class="header__preline">
         <div class="container-xl d-flex align-items-center justify-content-between">
             <nav>
@@ -19,11 +18,9 @@
         </div>
     </div>
 
-    <!-- ── Main row ─────────────────────────────────────────────────────────── -->
     <div class="header__main">
         <div class="container-xl d-flex align-items-center gap-4">
 
-            <!-- Logo -->
             <a href="index.html" class="header__logo" aria-label="Splenka — главная">
                 <svg width="164" height="25" viewBox="0 0 164 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M163.99 12.005C163.878 9.59312 162.843 7.32128 161.106 5.67467C159.369 4.02806 157.068 3.13718 154.694 3.19228C152.32 3.24737 150.061 4.24408 148.4 5.96955C146.739 7.69503 145.807 10.0125 145.803 12.4271V12.6107C145.807 15.0632 146.766 17.4141 148.472 19.1483C150.177 20.8825 152.49 21.8583 154.902 21.862C156.095 21.8661 157.277 21.6291 158.38 21.1646C159.482 20.7001 160.483 20.0174 161.324 19.1562V21.3146H164V12.1063L163.99 12.005ZM154.898 19.1408C153.195 19.139 151.563 18.4504 150.359 17.2262C149.155 16.0019 148.478 14.342 148.476 12.6107V12.4271C148.476 10.6952 149.153 9.03426 150.357 7.80963C151.561 6.585 153.195 5.89701 154.898 5.89701C156.601 5.89701 158.235 6.585 159.439 7.80963C160.644 9.03426 161.32 10.6952 161.32 12.4271V12.6107C161.319 14.342 160.641 16.0019 159.437 17.2262C158.233 18.4504 156.601 19.139 154.898 19.1408Z" fill="#1A332D"/>
@@ -37,7 +34,6 @@
                 </svg>
             </a>
 
-            <!-- Catalog button -->
             <button class="btn btn-outline-secondary header__catalog-btn flex-shrink-0 js-catalog-open" type="button" aria-expanded="false" aria-controls="catalogMenu">
                 <span>Каталог</span>
                 <svg class="header__catalog-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -45,7 +41,6 @@
                 </svg>
             </button>
 
-            <!-- Search wrap (inline) -->
             <form class="header__search-wrap js-search-wrap" action="#" autocomplete="off">
                 <input type="text" class="form-control header__search-input js-search-input" placeholder="Найти на сайте" aria-label="Поиск">
                 <button class="header__search-submit" type="submit" aria-label="Найти">
@@ -53,7 +48,6 @@
                         <path d="M17.0306 12.5307L9.53055 20.0307C9.38982 20.1714 9.19895 20.2505 8.99993 20.2505C8.80091 20.2505 8.61003 20.1714 8.4693 20.0307C8.32857 19.8899 8.24951 19.6991 8.24951 19.5001C8.24951 19.301 8.32857 19.1102 8.4693 18.9694L15.4396 12.0001L8.4693 5.03068C8.32857 4.88995 8.24951 4.69907 8.24951 4.50005C8.24951 4.30103 8.32857 4.11016 8.4693 3.96943C8.61003 3.8287 8.80091 3.74963 8.99993 3.74963C9.19895 3.74963 9.38982 3.8287 9.53055 3.96943L17.0306 11.4694C17.1003 11.5391 17.1556 11.6218 17.1933 11.7128C17.2311 11.8039 17.2505 11.9015 17.2505 12.0001C17.2505 12.0986 17.2311 12.1962 17.1933 12.2873C17.1556 12.3783 17.1003 12.461 17.0306 12.5307Z" fill="currentColor"/>
                     </svg>
                 </button>
-                <!-- Inline search results dropdown -->
                 <div class="header__search-drop js-search-drop" hidden>
                     <div class="search-drop__cats">
                         <a href="#" class="search-drop__cat"><mark>Смеси</mark>тели для кухни</a>
@@ -95,7 +89,6 @@
                 </div>
             </form>
 
-            <!-- Actions -->
             <div class="header__actions d-flex align-items-center ms-auto flex-shrink-0">
                 <button class="header__action js-search-toggle" type="button" aria-label="Поиск" title="Поиск">
                     <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -110,7 +103,6 @@
                     </button>
                     <div class="header__account-drop js-account-drop" id="accountDrop" hidden>
 
-                        <!-- Not logged in -->
                         <div hidden class="account-drop account-drop__login js-account-login">
                             <p class="account-drop__title">Личный кабинет</p>
                             <form class="d-flex flex-column gap-3" action="#">
@@ -147,7 +139,6 @@
                             </form>
                         </div>
 
-                        <!-- Logged in -->
                         <div class="account-drop account-drop--user js-account-user" >
                             <p class="account-drop__username">Василий Длиннофамилиев</p>
                             <a href="account.html" class="account-drop__nav-link">
@@ -258,12 +249,10 @@
         </div>
     </div>
 
-    <!-- ── Catalog mega menu ──────────────────────────────────────────────────── -->
     <div class="header__catalog-menu js-catalog-menu" id="catalogMenu" hidden>
         <div class="container-xl">
             <div class="catalog-menu__inner">
 
-                <!-- Categories nav -->
                 <nav class="catalog-menu__cats">
                     <a href="#" class="catalog-menu__cat" data-cat="shower">
                         <span class="catalog-menu__cat-icon">
@@ -381,7 +370,6 @@
                     </a>
                 </nav>
 
-                <!-- Sub-panels -->
                 <div class="catalog-menu__content">
 
                     <div class="catalog-menu__panel" data-panel="faucets">
@@ -459,7 +447,6 @@
         </div>
     </div>
 
-    <!-- ── Search overlay ────────────────────────────────────────────────────── -->
     <div class="header__search-overlay js-search-overlay" id="searchOverlay" hidden>
         <button class="search-overlay__close js-search-overlay-close" type="button" aria-label="Закрыть поиск">
             <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -481,7 +468,6 @@
                 </button>
             </form>
 
-            <!-- Empty state: categories -->
             <div class="search-overlay__empty js-search-overlay-empty">
                 <p class="search-overlay__cats-title">Категории товаров</p>
                 <div class="search-overlay__cats-grid">
@@ -596,7 +582,6 @@
                 </div>
             </div>
 
-            <!-- List results state (single column) -->
             <div class="search-overlay__list js-search-overlay-list" hidden>
                 <a href="#" class="search-overlay__list-cat"><mark>Смеси</mark>тели для кухни</a>
                 <a href="#" class="search-overlay__list-cat"><mark>Смеси</mark>тели для раковины</a>
@@ -624,7 +609,6 @@
                 </a>
             </div>
 
-            <!-- Results state (two-column) -->
             <div class="search-overlay__results js-search-overlay-results" hidden>
                 <div class="search-overlay__col-cats">
                     <p class="search-overlay__col-title">Категории</p>
@@ -691,7 +675,6 @@
     </div>
 
 
-    <!-- Backdrop -->
     <div class="header__backdrop js-header-backdrop" hidden></div>
 
 </header>

@@ -5,7 +5,6 @@ $ct-breakpoint-md: 767px;
 
 }
 
-// ── Header ──────────────────────────────────────────────────────────────────
 
 .comparison-header {
     display: flex;
@@ -63,7 +62,6 @@ $ct-breakpoint-md: 767px;
     }
 }
 
-// ── Products slider ──────────────────────────────────────────────────────────
 
 .comparison-products-wrap {
     position: relative;
@@ -116,7 +114,6 @@ $ct-breakpoint-md: 767px;
     }
 }
 
-// ── Toggle ───────────────────────────────────────────────────────────────────
 
 .comparison-toggle-table {
     background: var(--brand-white);
@@ -185,7 +182,6 @@ $ct-breakpoint-md: 767px;
     }
 }
 
-// ── Specs table ──────────────────────────────────────────────────────────────
 
 .comparison-specs-table-wrap {
     overflow-x: auto;
@@ -239,7 +235,6 @@ $ct-breakpoint-md: 767px;
     }
 }
 
-// ── Delete row ────────────────────────────────────────────────────────────────
 
 .comparison-delete-row {
     display: flex;

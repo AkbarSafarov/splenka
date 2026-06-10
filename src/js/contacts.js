@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-    // ── Contact form ──────────────────────────────────────────────────────
     const contactForm = document.querySelector('.contacts-form');
 
     if (contactForm) {
@@ -17,12 +16,10 @@ document.addEventListener('DOMContentLoaded', function () {
             });
 
             if (valid) {
-                // Placeholder: send message via API
                 console.log('message sent');
             }
         });
 
-        // Clear error state on input
         contactForm.querySelectorAll('input, textarea').forEach(function (field) {
             field.addEventListener('input', function () {
                 this.classList.remove('is-error');
@@ -30,14 +27,12 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // ── Store map tabs ────────────────────────────────────────────────────
     const storeTabs = document.querySelectorAll('[data-store-tab]');
 
     storeTabs.forEach(function (tab) {
         tab.addEventListener('click', function () {
             storeTabs.forEach(function (t) { t.classList.remove('is-active'); });
             this.classList.add('is-active');
-            // Placeholder: update map marker to matching store
         });
     });
 });

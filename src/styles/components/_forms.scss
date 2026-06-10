@@ -1,10 +1,4 @@
-// ── Forms ───────────────────────────────────────────────────────────────────
-// Bootstrap handles: .form-control (border, padding, radius, focus, disabled),
-// .form-check / .form-switch (checkbox, radio, toggle),
-// .is-valid / .is-invalid (valid/error states + feedback text).
-// This file adds: .is-warning, pill variant, qty-stepper, minor overrides.
 
-// ── Label ───────────────────────────────────────────────────────────────────
 .form-label {
     font-size: 12px;
     font-weight: 600;
@@ -13,10 +7,6 @@
     margin-bottom: 6px;
 }
 
-// ── Input overrides ─────────────────────────────────────────────────────────
-// Bootstrap variables set: border-width:2px, border-radius:24px,
-//   padding-y:12px, padding-x:24px, border-color:t-black-40.
-// CSS below: height, asymmetric padding (right=16px), hover state.
 
 .form-control,
 .form-select {
@@ -41,7 +31,6 @@
     padding-right: 1.25rem;
 }
 
-// Textarea — no fixed height
 textarea.form-control {
     height: auto;
     min-height: 100px;
@@ -49,17 +38,13 @@ textarea.form-control {
     resize: vertical;
 }
 
-// Select chevron padding
 .form-select {
     padding-right: 2.5rem;
 }
 
-// Pill variant — alias since border-radius is already 24px,
-// use for explicit pill on dark bg
 .form-control-pill { border-radius: 100px !important; }
 .form-select-pill  { border-radius: 100px !important; }
 
-// ── Warning state (not in Bootstrap) ────────────────────────────────────────
 .form-control.is-warning,
 .form-select.is-warning {
     border-color: var(--state-warning);
@@ -79,13 +64,10 @@ textarea.form-control {
     color: var(--state-warning);
 }
 
-// ── Confirmed / valid — use gold feedback text ───────────────────────────────
 .valid-feedback { color: var(--brand-gold); }
 
-// ── Invalid / error feedback ─────────────────────────────────────────────────
 .invalid-feedback { color: var(--state-error); }
 
-// ── Form check (checkbox & radio) ───────────────────────────────────────────
 .form-check-input {
     border-color: rgba(26, 51, 45, 0.3);
     cursor: pointer;
@@ -98,18 +80,11 @@ textarea.form-control {
     &.is-invalid { border-color: var(--state-error); }
 }
 
-// ── Form switch (toggle) — checked state uses gold ──────────────────────────
 .form-switch .form-check-input:checked {
     background-color: var(--brand-gold);
     border-color: var(--brand-gold);
 }
 
-// ── Qty stepper ─────────────────────────────────────────────────────────────
-// Usage: <div class="qty-stepper">
-//          <button class="qty-stepper__btn" data-qty="dec">–</button>
-//          <input  class="qty-stepper__input form-control" type="number" value="2">
-//          <button class="qty-stepper__btn" data-qty="inc">+</button>
-//        </div>
 
 .qty-stepper {
     display: inline-flex;

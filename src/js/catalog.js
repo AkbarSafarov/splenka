@@ -18,7 +18,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (sortSelect) {
         sortSelect.addEventListener('change', function () {
-            // Placeholder: hook into backend sort or client-side re-sort
             console.log('sort:', this.value);
         });
     }
@@ -39,7 +38,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (loadMoreBtn) {
         loadMoreBtn.addEventListener('click', function () {
-            // Placeholder: replace with real pagination / AJAX call
             console.log('load more');
         });
     }

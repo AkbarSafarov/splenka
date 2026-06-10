@@ -6,16 +6,14 @@
 <body>
 <div class="site_wrapper">
     @@include('header.html')
-    <div class="content_block_wr">
+    <main class="content_block_wr">
 
         <div class="product_card_section no-card">
             <div class="content-padding">
                 @@include('path.html')
                 <div class="product_card_main row g-4">
-                    <!-- Gallery -->
                     <div class="product_card_slider col-lg-8">
                         <div class="row g-4">
-                            <!-- Thumbs -->
                             <div class="col-2 col-lg-1">
                                 <div class="swiper gallery-thumbs">
                                     <div class="swiper-wrapper">
@@ -40,7 +38,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- Main Image -->
                             <div class="col-10 col-lg-11">
                                 <div class="label">
                                     <div class="new">
@@ -75,7 +72,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Product Info -->
                     <div class="product_card_info col-lg-4">
                         <div class="product_card_info_inner">
                             <div class="product_card_info_inner_top">
@@ -101,7 +97,7 @@
         @@include('similar.html')
         @@include('banner-section3.html')
 
-    </div>
+    </main>
     @@include('footer.html')
 </div>
 </body>

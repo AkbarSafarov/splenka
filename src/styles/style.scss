@@ -1,13 +1,10 @@
-// ─── Bootstrap 5 (compiled from SCSS with project overrides) ──────────────────
 @use 'vendor/bootstrap-config';
 
-// ─── Base ─────────────────────────────────────────────────────────────────────
 @use 'components/colors';
 @use 'components/fonts';
 @use 'components/buttons';
 @use 'components/forms';
 
-// ─── Blocks ───────────────────────────────────────────────────────────────────
 @use 'blocks/icons';
 @use 'blocks/header';
 @use 'blocks/footer';
@@ -21,10 +18,8 @@
 @use 'blocks/bottom-block';
 @use 'blocks/filter';
 
-// ─── Vendor ───────────────────────────────────────────────────────────────────
 @use 'vendor/inner-style';
 
-// ─── Segments ─────────────────────────────────────────────────────────────────
 @use 'segments/main';
 @use 'segments/card';
 @use 'segments/card-states';

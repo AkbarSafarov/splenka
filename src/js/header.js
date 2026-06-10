@@ -82,7 +82,6 @@ document.addEventListener('DOMContentLoaded', function () {
             if (panel) { panel.hidden = false; panel.classList.add('is-active'); }
         }
 
-        // init first active panel
         const firstActive = catalogMenu.querySelector('.catalog-menu__cat.is-active') || cats[0];
         if (firstActive) {
             panels.forEach(function (p) { p.hidden = true; });
@@ -90,12 +89,10 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         cats.forEach(function (cat) {
-            // Desktop: hover switches panel
             cat.addEventListener('mouseenter', function () {
                 if (!isMobile()) activatePanel(this);
             });
 
-            // Mobile: click on arrow → slide in panel from right
             cat.addEventListener('click', function (e) {
                 if (!isMobile()) return;
                 const arrow = cat.querySelector('.catalog-menu__cat-arrow');
@@ -120,7 +117,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     const active = catalogMenu.querySelector('.catalog-menu__cat.is-active') || cats[0];
                     if (active) activatePanel(active);
                 } else {
-                    // reset to categories list
                     if (inner) inner.classList.remove('panel-open');
                     panels.forEach(function (p) { p.hidden = true; p.classList.remove('is-active'); });
                     cats.forEach(function (c) { c.classList.remove('is-active'); });
@@ -129,7 +125,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // ── Search icon → open overlay directly ───────────────────────────────────
     if (searchToggle) {
         searchToggle.addEventListener('click', function () {
             const isOpen = searchOverlay && !searchOverlay.hidden;
@@ -138,7 +133,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // ── Search overlay (full) ──────────────────────────────────────────────────
     function openSearchOverlay(query) {
         closeAll();
         show(searchOverlay);

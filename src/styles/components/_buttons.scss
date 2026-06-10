@@ -1,10 +1,3 @@
-// ── Buttons ────────────────────────────────────────────────────────────────
-// Via Bootstrap variables ($btn-*):
-//   padding, font-family, font-size, font-weight, line-height, border-width,
-//   border-radius (24px base), colors, disabled-opacity, transition.
-//
-// Via CSS below (Bootstrap vars can't cover these):
-//   asymmetric radius (24 24 24 0), letter-spacing, text-transform, gap.
 
 .btn {
     display: inline-flex;
@@ -50,14 +43,10 @@
     border-radius: 28px 28px 28px 0;
 }
 
-// ── Pill modifier (rounded-pill already exists in BS but resets bottom-left) ─
-// Use .btn-pill when you need fully round, not asymmetric
 .btn-pill {
     border-radius: 100px !important;
 }
 
-// ── Icon-only circle button ─────────────────────────────────────────────────
-// Usage: <button class="btn btn-icon btn-dark">
 .btn-icon {
     width:  40px;
     height: 40px;
@@ -73,7 +62,6 @@
     &.btn-lg { width: 48px; height: 48px; }
 }
 
-// ── Ghost variants ──────────────────────────────────────────────────────────
 .btn-ghost-dark {
     color: var(--brand-black);
     background: transparent;

@@ -6,41 +6,38 @@
 <body>
 <div class="site_wrapper">
     @@include('header.html')
-    <div class="content_block_wr">
+    <main class="content_block_wr">
 
         <div class="product_card_section">
             <div class="container-xl">
                 @@include('path.html')
                 <div class="product_card_main row g-4">
-                    <!-- Gallery -->
                     <div class="product_card_slider col-lg-8">
                         <div class="row g-4">
-                            <!-- Thumbs -->
                             <div class="col-2 col-lg-1">
                                 <div class="swiper gallery-thumbs">
                                     <div class="swiper-wrapper">
                                         <div class="swiper-slide">
-                                            <img src="files/product.png" alt=" 1">
+                                            <img src="files/product.png" alt="Фото товара">
                                         </div>
                                         <div class="swiper-slide">
-                                            <img src="files/product2.png" alt=" 1">
+                                            <img src="files/product2.png" alt="Фото товара">
                                         </div>
                                         <div class="swiper-slide">
-                                            <img src="files/product2.png" alt=" 1">
+                                            <img src="files/product2.png" alt="Фото товара">
                                         </div>
                                         <div class="swiper-slide">
-                                            <img src="files/product.png" alt=" 1">
+                                            <img src="files/product.png" alt="Фото товара">
                                         </div>
                                         <div class="swiper-slide">
-                                            <img src="files/product.png" alt=" 1">
+                                            <img src="files/product.png" alt="Фото товара">
                                         </div>
                                         <div class="swiper-slide">
-                                            <img src="files/product.png" alt=" 1">
+                                            <img src="files/product.png" alt="Фото товара">
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <!-- Main Image -->
                             <div class="col-10 col-lg-11">
                                 <div class="label">
                                     <div class="new">
@@ -53,29 +50,28 @@
                                 <div class="swiper gallery-main">
                                     <div class="swiper-wrapper">
                                         <div class="swiper-slide">
-                                            <img src="files/product.png" alt=" 1">
+                                            <img src="files/product.png" alt="Фото товара">
                                         </div>
                                         <div class="swiper-slide">
-                                            <img src="files/product2.png" alt=" 1">
+                                            <img src="files/product2.png" alt="Фото товара">
                                         </div>
                                         <div class="swiper-slide">
-                                            <img src="files/product2.png" alt=" 1">
+                                            <img src="files/product2.png" alt="Фото товара">
                                         </div>
                                         <div class="swiper-slide">
-                                            <img src="files/product.png" alt=" 1">
+                                            <img src="files/product.png" alt="Фото товара">
                                         </div>
                                         <div class="swiper-slide">
-                                            <img src="files/product.png" alt=" 1">
+                                            <img src="files/product.png" alt="Фото товара">
                                         </div>
                                         <div class="swiper-slide">
-                                            <img src="files/product.png" alt=" 1">
+                                            <img src="files/product.png" alt="Фото товара">
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!-- Product Info -->
                     <div class="product_card_info col-lg-4">
                         <div class="product_card_info_inner">
                             <div class="product_card_info_inner_top">
@@ -87,25 +83,25 @@
                                     <div class="color-label">Цвет: <span>Хром</span></div>
                                     <div class="color-options">
                                         <div class="color-option" title="Чёрный">
-                                            <img src="files/product.png" alt=" 1">
+                                            <img src="files/product.png" alt="Фото товара">
                                         </div>
                                         <div class="color-option" title="Графит">
-                                            <img src="files/product.png" alt=" 1">
+                                            <img src="files/product.png" alt="Фото товара">
                                         </div>
                                         <div class="color-option active" title="Хром">
-                                            <img src="files/product.png" alt=" 1">
+                                            <img src="files/product.png" alt="Фото товара">
                                         </div>
                                         <div class="color-option" title="Золото">
-                                            <img src="files/product.png" alt=" 1">
+                                            <img src="files/product.png" alt="Фото товара">
                                         </div>
                                         <div class="color-option" title="Графит">
-                                            <img src="files/product.png" alt=" 1">
+                                            <img src="files/product.png" alt="Фото товара">
                                         </div>
                                         <div class="color-option" title="Хром">
-                                            <img src="files/product.png" alt=" 1">
+                                            <img src="files/product.png" alt="Фото товара">
                                         </div>
                                         <div class="color-option" title="Золото">
-                                            <img src="files/product.png" alt=" 1">
+                                            <img src="files/product.png" alt="Фото товара">
                                         </div>
                                     </div>
                                 </div>
@@ -118,13 +114,13 @@
                                 </div>
                                 <div class="product-actions">
                                     <div class="amount_block">
-                                        <button class="minus">
+                                        <button class="minus" type="button" aria-label="Уменьшить количество">
                                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M17.5 10C17.5 10.1658 17.4342 10.3247 17.3169 10.4419C17.1997 10.5592 17.0408 10.625 16.875 10.625H3.125C2.95924 10.625 2.80027 10.5592 2.68306 10.4419C2.56585 10.3247 2.5 10.1658 2.5 10C2.5 9.83424 2.56585 9.67527 2.68306 9.55806C2.80027 9.44085 2.95924 9.375 3.125 9.375H16.875C17.0408 9.375 17.1997 9.44085 17.3169 9.55806C17.4342 9.67527 17.5 9.83424 17.5 10Z" fill="#1A332D" />
                                             </svg>
                                         </button>
-                                        <input type="text" value="1">
-                                        <button class="plus">
+                                        <input type="number" value="1" min="1" aria-label="Количество товара">
+                                        <button class="plus" type="button" aria-label="Увеличить количество">
                                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M17.5 10C17.5 10.1658 17.4342 10.3247 17.3169 10.4419C17.1997 10.5592 17.0408 10.625 16.875 10.625H10.625V16.875C10.625 17.0408 10.5592 17.1997 10.4419 17.3169C10.3247 17.4342 10.1658 17.5 10 17.5C9.83424 17.5 9.67527 17.4342 9.55806 17.3169C9.44085 17.1997 9.375 17.0408 9.375 16.875V10.625H3.125C2.95924 10.625 2.80027 10.5592 2.68306 10.4419C2.56585 10.3247 2.5 10.1658 2.5 10C2.5 9.83424 2.56585 9.67527 2.68306 9.55806C2.80027 9.44085 2.95924 9.375 3.125 9.375H9.375V3.125C9.375 2.95924 9.44085 2.80027 9.55806 2.68306C9.67527 2.56585 9.83424 2.5 10 2.5C10.1658 2.5 10.3247 2.56585 10.4419 2.68306C10.5592 2.80027 10.625 2.95924 10.625 3.125V9.375H16.875C17.0408 9.375 17.1997 9.44085 17.3169 9.55806C17.4342 9.67527 17.5 9.83424 17.5 10Z" fill="#1A332D" />
                                             </svg>
@@ -323,7 +319,7 @@
                                     </div>
                                     <div class="tech-icon">
                                         <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <g clip-path="url(#clip0_2104_3477)">
+                                            <g clip-path="url(#clip0_2104_3477b)">
                                                 <path d="M24.7429 36.1984C24.7514 36.4235 24.8321 36.6061 24.985 36.7378C25.1379 36.8695 25.3461 36.9375 25.6052 36.9375C25.8643 36.9375 26.0682 36.8822 26.2168 36.7675C26.3655 36.6529 26.442 36.4999 26.442 36.3088C26.442 36.1389 26.3698 35.9945 26.2253 35.8713C26.0809 35.7481 25.7793 35.6079 25.3206 35.438C25.2781 35.4253 25.2102 35.3998 25.1125 35.3658C24.5773 35.1832 24.1822 34.992 23.9189 34.7924C23.6853 34.6225 23.5111 34.4059 23.3879 34.1468C23.2647 33.8877 23.2053 33.5988 23.2053 33.276C23.2053 32.6559 23.4177 32.1546 23.8467 31.7681C24.2757 31.3816 24.8364 31.1904 25.533 31.1904C26.3018 31.1904 26.8922 31.3731 27.3042 31.7341C27.7163 32.0952 27.9244 32.6176 27.9329 33.293L26.3698 33.2972C26.3655 33.0424 26.2891 32.847 26.1531 32.7068C26.013 32.5667 25.8176 32.4944 25.5712 32.4944C25.3333 32.4944 25.1464 32.5539 25.002 32.6686C24.8618 32.7833 24.7896 32.9404 24.7896 33.1358C24.7896 33.4162 25.1294 33.6795 25.8048 33.9259C25.9407 33.9769 26.0469 34.0151 26.1234 34.0448C26.1659 34.0618 26.2296 34.0831 26.3103 34.117C26.9304 34.3464 27.3637 34.5928 27.6143 34.8646C27.7715 35.0303 27.8862 35.2172 27.9626 35.4253C28.0391 35.6334 28.0773 35.8671 28.0773 36.1219C28.0773 36.7888 27.8479 37.324 27.3892 37.7275C26.9262 38.131 26.3145 38.3349 25.5457 38.3349C24.8236 38.3349 24.2502 38.1438 23.8254 37.7615C23.4007 37.3792 23.1755 36.8567 23.1543 36.1899L24.7429 36.1941V36.1984ZM30.0949 38.1947V32.7238H28.5488V31.3306H33.3656V32.7238H31.8195V38.1947H30.0949ZM34.1897 38.1947V31.3306H38.0338V32.6601H35.9142V34.0618H38.0338V35.3913H35.9142V36.8015H38.0338V38.1947H34.1897ZM39.478 38.1947V31.3306H43.3263V32.6601H41.2068V34.0618H43.3263V35.3913H41.2068V36.8015H43.3263V38.1947H39.478ZM44.7663 38.1947V31.3306H46.4908V36.8015H48.2239V38.1947H44.7663Z" fill="#1A332D" fill-opacity="0.8"/>
                                                 <path d="M55.9922 26.4118C52.8957 26.4118 50.7124 24.8062 48.321 23.0477C45.2244 20.7709 41.8008 18.2563 35.6927 18.2563C29.6101 18.2563 26.229 20.7539 23.1537 23.0264C20.7623 24.7934 18.5663 26.416 15.3933 26.416H14.5098L14.7137 27.274C20.9662 53.5668 24.3133 56.3532 29.6483 60.7962C31.2582 62.1342 33.0549 63.6336 35.1745 66.0208L35.697 66.6069L36.2194 66.0208C38.339 63.6336 40.1358 62.1384 41.7456 60.7962C47.0806 56.3532 50.4278 53.5668 56.6803 27.274L56.8842 26.416H56.0007L55.9922 26.4118ZM47.4969 24.169C49.8629 25.9063 52.0419 27.5119 55.1172 27.7668C49.0983 52.8447 45.9041 55.5079 40.8494 59.7216C39.333 60.9831 37.6551 62.3806 35.6927 64.5171C33.7303 62.3806 32.0525 60.9831 30.5361 59.7216C25.4772 55.5079 22.2872 52.8489 16.2683 27.771C19.4115 27.5161 21.6076 25.8936 23.982 24.1393C26.8789 21.9985 30.0604 19.6496 35.6927 19.6496C41.3463 19.6496 44.5745 22.024 47.4969 24.169Z" fill="#1A332D" fill-opacity="0.8"/>
                                                 <path d="M64.7799 51.3582C63.786 51.3582 62.8303 51.9316 62.0997 52.8576C61.3903 53.7538 60.8763 54.9856 60.7319 56.3406C60.7022 56.604 60.6895 56.8588 60.6895 57.1009C60.6895 58.2308 60.9698 59.2417 61.4455 59.9936C61.9425 60.7794 62.6604 61.2891 63.5099 61.3783C63.6033 61.3868 63.6925 61.3953 63.7817 61.3953C64.7757 61.3953 65.7271 60.8218 66.462 59.8959C67.1713 59.0039 67.6853 57.7678 67.8297 56.4128C67.8595 56.1495 67.8722 55.8946 67.8722 55.6525C67.8722 54.5226 67.5919 53.5117 67.1161 52.7599C66.6192 51.9741 65.9013 51.4643 65.0518 51.3751C64.9583 51.3666 64.8691 51.3624 64.7799 51.3624V51.3582ZM62.6179 53.2696C63.2295 52.5008 63.9984 52.0208 64.7799 52.0208C64.8521 52.0208 64.9201 52.025 64.9796 52.0293C65.6125 52.0972 66.1604 52.4965 66.5512 53.1124C66.9632 53.7623 67.2053 54.6458 67.2053 55.6482C67.2053 55.8776 67.1926 56.1112 67.1671 56.3364C67.0354 57.5639 66.5767 58.6768 65.9395 59.4796C65.3279 60.2484 64.559 60.7241 63.7775 60.7241C63.7053 60.7241 63.6373 60.7199 63.5778 60.7156C62.9449 60.6477 62.397 60.2484 62.0062 59.6325C61.5942 58.9826 61.3521 58.0991 61.3521 57.0967C61.3521 56.8673 61.3648 56.6379 61.3903 56.4043C61.522 55.1768 61.9807 54.0639 62.6179 53.2653V53.2696Z" fill="#1A332D" fill-opacity="0.8"/>
@@ -346,7 +342,7 @@
                                                 <path d="M54.3664 60.6901L44.5034 57.5808C44.1976 57.9121 43.8918 58.2265 43.5859 58.5195L55.097 62.1427L54.2348 61.1063L54.3664 60.6816V60.6901Z"  fill="#1A332D" fill-opacity="0.8" />
                                             </g>
                                             <defs>
-                                                <clipPath id="clip0_2104_3477">
+                                                <clipPath id="clip0_2104_3477b">
                                                     <rect width="80" height="80" fill="white" />
                                                 </clipPath>
                                             </defs>
@@ -441,7 +437,7 @@
         @@include('about-block.html')
         @@include('like.html')
 
-    </div>
+    </main>
     @@include('footer.html')
 </div>
 </body>
